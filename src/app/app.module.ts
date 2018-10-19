@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './Shared/side-nav/side-nav.component';
 import { TopNavComponent } from './Shared/top-nav/top-nav.component';
@@ -39,6 +40,7 @@ import { UserProfileComponent } from './Components/user-profile/user-profile.com
   imports: [
     BrowserModule,
     AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
