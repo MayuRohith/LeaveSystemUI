@@ -1,10 +1,17 @@
+import { ReqLeaveComponent } from './Components/req-leave/req-leave.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { UserComponent } from './user/user.component';
 
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+const routes: Routes = [
+  {path: 'user', component: UserComponent},
+  {path: 'leaverequest', component: ReqLeaveComponent}
+];
+ @NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const RoutingComponents = [
+                              UserComponent,
+                              ReqLeaveComponent];

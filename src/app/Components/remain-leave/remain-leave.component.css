@@ -16,10 +16,10 @@
 
 .card-footer-custom {
     font-size: 16px;
-    color: #999999;
+    color: rgb(99, 99, 99);
     background-color: transparent;
     align-self: center;
-    
+    padding-top: 5px;
 }
 
 .remain, .devider {
@@ -40,4 +40,8 @@
 
 .card-ok{
     background-color: green;
+}
+
+.sub-card {
+    background-color: #eee;
 }

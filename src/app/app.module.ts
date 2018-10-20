@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -5,9 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './Shared/side-nav/side-nav.component';
 import { TopNavComponent } from './Shared/top-nav/top-nav.component';
-import { AppRoutingModule } from './app-routing.module';
-import { ReqLeaveComponent } from './Components/req-leave/req-leave.component';
-import { UserComponent } from './user/user.component';
+import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { LeaveHistoryComponent } from './Components/leave-history/leave-history.component';
 import { RemainLeaveComponent } from './Components/remain-leave/remain-leave.component';
 import { CarryForwardComponent } from './Components/carry-forward/carry-forward.component';
@@ -19,13 +18,12 @@ import { ReqHistoryComponent } from './Components/req-history/req-history.compon
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     TopNavComponent,
-    ReqLeaveComponent,
-    UserComponent,
     LeaveHistoryComponent,
     RemainLeaveComponent,
     CarryForwardComponent,
@@ -35,14 +33,16 @@ import { UserProfileComponent } from './Components/user-profile/user-profile.com
     PendingReqComponent,
     ReqHistoryComponent,
     AddUserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    RoutingComponents, //This array has routed components, so the imports are in the app-routing.module.ts
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
