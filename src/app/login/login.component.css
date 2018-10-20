@@ -1,0 +1,10 @@
+.row {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17%;
+}
+.btn-circle{
+    border-radius: 20px;
+}
