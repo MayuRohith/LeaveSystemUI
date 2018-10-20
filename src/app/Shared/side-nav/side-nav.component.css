@@ -19,6 +19,7 @@
 
 .sidebar .logo .simple-text {
     text-transform: uppercase;
+    margin-top: 20px;
     padding: 5px 0px;
     display: inline-block;
     font-size: 18px;
@@ -98,4 +99,18 @@ a .material-icons {
 
 .sidebar .nav li.active > a, .sidebar .nav li.active > a i {
     color: #fff;
+}
+
+.sidebar .logo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: rgba(180, 180, 180, 0.3);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
