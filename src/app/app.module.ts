@@ -17,6 +17,7 @@ import { PendingReqComponent } from './Components/pending-req/pending-req.compon
 import { ReqHistoryComponent } from './Components/req-history/req-history.component';
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { PrevilageComponent } from './Components/previlage/previlage.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserProfileComponent } from './Components/user-profile/user-profile.com
     ReqHistoryComponent,
     AddUserComponent,
     UserProfileComponent,
-    RoutingComponents, //This array has routed components, so the imports are in the app-routing.module.ts
+    RoutingComponents,
+    PrevilageComponent, //This array has routed components, so the imports are in the app-routing.module.ts
   ],
   imports: [
     BrowserModule,
