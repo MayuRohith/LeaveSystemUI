@@ -22,6 +22,12 @@ import { AddRoleComponent } from './Components/add-role/add-role.component';
 import { AddDepartmentComponent } from './Components/add-department/add-department.component';
 import { AddLeaveTypeComponent } from './Components/add-leave-type/add-leave-type.component';
 import { AdminComponent } from './admin/admin.component';
+import { ViewDepartmentComponent } from './Components/view-department/view-department.component';
+import { ViewRoleComponent } from './Components/view-role/view-role.component';
+import { ViewLeaveTypeComponent } from './Components/view-leave-type/view-leave-type.component';
+import { AddHolidayComponent } from './Components/add-holiday/add-holiday.component';
+import { EditHolidayComponent } from './Components/edit-holiday/edit-holiday.component';
+import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.component';
 
 
 @NgModule({
@@ -44,7 +50,13 @@ import { AdminComponent } from './admin/admin.component';
     AddRoleComponent,
     AddDepartmentComponent,
     AddLeaveTypeComponent,
-    AdminComponent
+    AdminComponent,
+    ViewDepartmentComponent,
+    ViewRoleComponent,
+    ViewLeaveTypeComponent,
+    AddHolidayComponent,
+    EditHolidayComponent,
+    ViewHolidayComponent
   ],
   imports: [
     BrowserModule,
