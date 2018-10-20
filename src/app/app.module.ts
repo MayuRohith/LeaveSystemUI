@@ -21,6 +21,7 @@ import { PrevilageComponent } from './Components/previlage/previlage.component';
 import { AddRoleComponent } from './Components/add-role/add-role.component';
 import { AddDepartmentComponent } from './Components/add-department/add-department.component';
 import { AddLeaveTypeComponent } from './Components/add-leave-type/add-leave-type.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AddLeaveTypeComponent } from './Components/add-leave-type/add-leave-typ
     PrevilageComponent,
     AddRoleComponent,
     AddDepartmentComponent,
-    AddLeaveTypeComponent, //This array has routed components, so the imports are in the app-routing.module.ts
+    AddLeaveTypeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
