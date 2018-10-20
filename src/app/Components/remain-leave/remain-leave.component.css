@@ -1,33 +1,36 @@
 .card-header-custom{
     background-color: #dd12e4;
-    margin-left: 10%;
-    margin-right: 30%;
+    margin-left: 8%;
+    margin-right: 55%;
     color: aliceblue;
     font-family:  "Arial";
     padding-left: 25px;
     border: 0;
     margin-bottom: 10px;
     margin-top: -20px;
+    margin-bottom: -10px;
     border-radius: 3px !important;
     /* color: #333333; */
     /* background: #fff; */
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-.card-footer-custom {
-    font-size: 16px;
+.card-body-custom {
+    font-size: 11px;
     color: rgb(99, 99, 99);
     background-color: transparent;
-    align-self: center;
-    padding-top: 5px;
+    align-self: right;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    
 }
 
 .remain, .devider {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .total {
-    font-size: 20px;    
+    font-size: 14px;    
 }
 
 .card-danger {
@@ -47,5 +50,5 @@
 }
 
 .row-custom {
-    margin-top: 8px;
+    margin-top: 0px;
 }

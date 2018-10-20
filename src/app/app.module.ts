@@ -28,6 +28,11 @@ import { ViewLeaveTypeComponent } from './Components/view-leave-type/view-leave-
 import { AddHolidayComponent } from './Components/add-holiday/add-holiday.component';
 import { EditHolidayComponent } from './Components/edit-holiday/edit-holiday.component';
 import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.component';
+import { AddStatusComponent } from './Components/add-status/add-status.component';
+import { EditStatusComponent } from './Components/edit-status/edit-status.component';
+import { EditDepartmentComponent } from './Components/edit-department/edit-department.component';
+import { EditRoleComponent } from './Components/edit-role/edit-role.component';
+import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-type.component';
 
 
 @NgModule({
@@ -56,7 +61,12 @@ import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.com
     ViewLeaveTypeComponent,
     AddHolidayComponent,
     EditHolidayComponent,
-    ViewHolidayComponent
+    ViewHolidayComponent,
+    AddStatusComponent,
+    EditStatusComponent,
+    EditDepartmentComponent,
+    EditRoleComponent,
+    EditLeaveTypeComponent
   ],
   imports: [
     BrowserModule,
