@@ -18,6 +18,9 @@ import { ReqHistoryComponent } from './Components/req-history/req-history.compon
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
 import { PrevilageComponent } from './Components/previlage/previlage.component';
+import { AddRoleComponent } from './Components/add-role/add-role.component';
+import { AddDepartmentComponent } from './Components/add-department/add-department.component';
+import { AddLeaveTypeComponent } from './Components/add-leave-type/add-leave-type.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { PrevilageComponent } from './Components/previlage/previlage.component';
     AddUserComponent,
     UserProfileComponent,
     RoutingComponents,
-    PrevilageComponent, //This array has routed components, so the imports are in the app-routing.module.ts
+    PrevilageComponent,
+    AddRoleComponent,
+    AddDepartmentComponent,
+    AddLeaveTypeComponent, //This array has routed components, so the imports are in the app-routing.module.ts
   ],
   imports: [
     BrowserModule,
