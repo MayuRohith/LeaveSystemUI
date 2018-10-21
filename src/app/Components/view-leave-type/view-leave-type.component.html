@@ -1,6 +1,15 @@
 <div class="card">
     <div class="card-header card-header-primary">
-      <h4 class="card-title">Leave Type</h4>
+        <div class="row">
+            <div class="col-md-6">
+              <h4 class="card-title ">Leave Type</h4>
+            </div>
+            <div class="col-md-6">
+              <span class="float-right">
+                <Button class="btn btn-primary btn-add" data-toggle="modal" data-target="#AddLeaveTypeModal"><i class="fas fa-plus plus-btn"></i> Leave Type</Button>
+              </span>
+            </div>
+          </div>
     </div>
     <div class="card-body">
       <table class="table">
@@ -18,7 +27,7 @@
             <td>
               <div class="row">
                 <div>
-                  <a href=""> <span class="input-group-addon edit"><i class="fas fa-pen-nib"></i></span></a>
+                  <a href="" data-toggle="modal" data-target="#EditLeaveTypeModal"> <span class="input-group-addon edit"><i class="fas fa-pen-nib"></i></span></a>
                 </div>
                 <div>
                   <a href=""> <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
