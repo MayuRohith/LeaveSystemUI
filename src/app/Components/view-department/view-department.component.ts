@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DepartmentService } from '../../services/department.service';
+import { Department } from '../../Models/department';
 
 @Component({
   selector: 'app-view-department',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDepartmentComponent implements OnInit {
 
-  constructor() { }
+  departments: Department[];
+  departmentObj = new Department();
+
+  constructor(private departmentService: DepartmentService) { }
 
   ngOnInit() {
+    this.viewDepartment();
   }
 
+  viewDepartment() {
+    return this.departmentService.getDepartment().subscribe(data => {
+      this.departments = data;
+      console.log(data);
+    });
+  }
+
+  updateDepartment() {
+    return this.departmentService.updateDepartment(this.departmentObj).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  getDepartmentById(department) {
+    this.departmentObj = department;
+  }
+
+  createDepartment() {
+    return this.departmentService.addDepartment(this.departmentObj).subscribe(data =>{
+      console.log(this.departmentObj);
+    });
+  }
 }
