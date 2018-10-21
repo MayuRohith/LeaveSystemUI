@@ -151,3 +151,12 @@ h4, h5 {
 .card-header-danger{
     background-color:#dc3545;
 }
+
+.model-form{
+    padding-top: 15px;  
+}
+
+.container-custom {
+    padding-left: 20px;
+    padding-right: 20px;
+}
