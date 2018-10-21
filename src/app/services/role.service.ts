@@ -11,4 +11,11 @@ export class RoleService {
   public getAllRoles() {
     return this.http.get<Role[]>(this.roleUrl); // here we use get method if we use post then we have to use it on "post"
   }
+  public deleteRole(role) {
+    return this.http.delete<Role>(this.roleUrl + '/' + role.id, role);
+  }
+
+  public editRole(role) {
+    return this.http.put<Role>(this.roleUrl + '/' + role.id, role);
+  }
 }

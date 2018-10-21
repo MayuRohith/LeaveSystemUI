@@ -37,21 +37,19 @@
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/enrole']">
-          <i class="material-icons">library_books</i>
-          <p>enrole user</p>
-        </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/role']">
-          <i class="material-icons">library_books</i>
+          <i class="material-icons">Pending</i>
           <p>role</p>
         </a>
       </li>
     </ul>
 
     <div class="alert alert-success notification" id="alert-success">
-      <span class="bold-font">Success:
-      </span> All records were processed correctly!</div>
+      <span class="bold-font">Success:</span> All records were processed correctly!
+    </div>
+
+    <div class="alert alert-danger notification" id="alert-danger">
+        <span class="bold-font">Error:</span> This record is joining with another table.
+      </div>
   </div>
 </div>

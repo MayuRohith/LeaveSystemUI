@@ -11,6 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { PrevilageComponent } from './Components/previlage/previlage.component';
 import { ViewRoleComponent } from './Components/view-role/view-role.component';
+import {PendingReqComponent} from './Components/pending-req/pending-req.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -22,7 +24,10 @@ const routes: Routes = [
   {path: 'holiday', component: AddHolidayComponent},
   {path: 'enrole', component: AddUserComponent},
   {path: 'role', component: AddRoleComponent},
-  {path: '**', redirectTo: 'login'}
+  {path: '**', redirectTo: 'login'},
+  // {path: 'admin', component: AdminComponent},
+  // {path: 'role', component: ViewRoleComponent},
+  // {path: 'pendingreq', component: PendingReqComponent}
 ];
  @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -32,4 +37,5 @@ export class AppRoutingModule { }
 export const RoutingComponents = [
                               UserComponent,
                               ReqLeaveComponent,
-                              ViewRoleComponent];
+                              ViewRoleComponent,
+                              PendingReqComponent];

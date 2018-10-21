@@ -34,7 +34,7 @@ import { EditDepartmentComponent } from './Components/edit-department/edit-depar
 import { EditRoleComponent } from './Components/edit-role/edit-role.component';
 import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-type.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LeaveTypeService } from './services/leave-type.service';
 
 @NgModule({
   declarations: [
@@ -77,6 +77,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     UserService,
+    LeaveTypeService
   ],
   bootstrap: [AppComponent]
 })
