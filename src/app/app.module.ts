@@ -1,7 +1,7 @@
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './Shared/side-nav/side-nav.component';
@@ -33,6 +33,7 @@ import { EditStatusComponent } from './Components/edit-status/edit-status.compon
 import { EditDepartmentComponent } from './Components/edit-department/edit-department.component';
 import { EditRoleComponent } from './Components/edit-role/edit-role.component';
 import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-type.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -71,6 +72,8 @@ import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [
     UserService,

@@ -135,6 +135,9 @@ h4 {
     font-size: 18px;
 }
 .trash{
-    color: red;
+    color: rgb(206, 37, 37);
     font-size: 18px;
+}
+.card-header-danger{
+    background-color:#dc3545;
 }
