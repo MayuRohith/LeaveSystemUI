@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartmentService } from '../../services/department.service';
 import { Department } from '../../Models/department';
+import { InteractionService } from 'src/app/UIService/interaction.service';
 
 @Component({
   selector: 'app-view-department',
@@ -12,10 +13,14 @@ export class ViewDepartmentComponent implements OnInit {
   departments: Department[];
   departmentObj = new Department();
 
-  constructor(private departmentService: DepartmentService) { }
+  constructor(private departmentService: DepartmentService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.viewDepartment();
+    this.interactionService.msgDataSource$.subscribe(msg=>{
+      console.log('Update ' + msg);
+      this.viewDepartment();
+    })
   }
 
   viewDepartment() {
@@ -25,18 +30,17 @@ export class ViewDepartmentComponent implements OnInit {
     });
   }
 
-  updateDepartment() {
-    return this.departmentService.updateDepartment(this.departmentObj).subscribe(data => {
-      console.log(data);
-    });
-  }
+
 
   getDepartmentById(department) {
-    this.departmentObj = department;
+    //this.departmentObj = department;
+    console.log(department);
+    this.interactionService.sendDepartment(department);
+
   }
 
   createDepartment() {
-    return this.departmentService.addDepartment(this.departmentObj).subscribe(data =>{
+    return this.departmentService.addDepartment(this.departmentObj).subscribe(data => {
       console.log(this.departmentObj);
     });
   }

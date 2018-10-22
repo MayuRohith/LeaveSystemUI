@@ -1,8 +1,9 @@
 <div class="wrapper">
-  <app-side-nav></app-side-nav>
+  <app-side-nav [msgToChild]="helloChild"></app-side-nav>
   <div class="main-panel">
     <app-top-nav></app-top-nav>
     <div class="content">      
+        <button (click)="msgChild()"> msg to child</button>
     <router-outlet></router-outlet>
     </div>
   </div>
