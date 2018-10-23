@@ -11,7 +11,7 @@ export class AppComponent {
   helloChild;
   title = 'LeaveSystemUI';
 
-  msgChild(){
-    alert("test");
+  msgChild() {
+    alert('test');
   }
 }
