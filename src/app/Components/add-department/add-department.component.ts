@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Department } from '../../Models/department';
+import { HttpClient } from '@angular/common/http';
+import { DepartmentService } from '../../services/department.service';
+import { InteractionService } from '../../UIService/interaction.service';
 
 @Component({
   selector: 'app-add-department',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDepartmentComponent implements OnInit {
 
-  constructor() { }
+  addDepartment: Department[];
+  addTypeDepartmentObj = new Department();
+  constructor(private department: DepartmentService, private interactionService: InteractionService) { }
 
+  private addLeaveUrl = 'http://localhost:8080/hrm_system/department';
   ngOnInit() {
+  }
+
+  addDepart() {
+    this.department.addDepartment(this.addTypeDepartmentObj).subscribe(data => {
+      console.log(data);
+      this.interactionService.upadateMsg('success');
+    });
   }
 
 }

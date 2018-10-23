@@ -1,50 +1,52 @@
 <div class="card">
-    <div class="card-header card-header-primary">
-        <div class="row">
-            <div class="col-md-6">
-              <h4 class="card-title ">Leave Type</h4>
-            </div>
-            <div class="col-md-6">
-              <span class="float-right">
-                <Button class="btn btn-primary btn-add" data-toggle="modal" data-target="#AddLeaveTypeModal"><i class="fas fa-plus plus-btn"></i> Leave Type</Button>
-              </span>
-            </div>
-          </div>
-    </div>
-    <div class="card-body">
-      <table class="table">
-        <thead class="thead-primary">
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Leave Type</th>
-            <th scope="col">Allocation</th>
-            <th scope="col">Edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let leaveType of leaveTypes">
-            <td>{{leaveType.id}}</td>
-            <td>{{leaveType.leaveType}}</td>
-            <td>{{leaveType.allocationDays}}</td>
-            <td>
-              <div class="row">
-                <div>
-                  <a href="" data-toggle="modal" data-target="#EditLeaveTypeModal"> <span class="input-group-addon edit" (click)="getLeaveTypeById1(leaveType)"><i class="fas fa-pen-nib"></i></span></a>
-                </div>
-                <div>
-                  <a href="" data-toggle="modal" data-target="#deleteLeaveType" (click)="getLeaveTypeById(leaveType)" >
-                     <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="card-header card-header-primary">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="card-title ">Leave Type</h4>
+      </div>
+      <div class="col-md-6">
+        <span class="float-right">
+          <Button class="btn btn-primary btn-add" data-toggle="modal" data-target="#AddLeaveTypeModal"><i class="fas fa-plus plus-btn"></i>
+            Leave Type</Button>
+        </span>
+      </div>
     </div>
   </div>
-  
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-primary">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Leave Type</th>
+          <th scope="col">Allocation</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leaveType of leaveTypes">
+          <td>{{leaveType.id}}</td>
+          <td>{{leaveType.leaveType}}</td>
+          <td>{{leaveType.allocationDays}}</td>
+          <td>
+            <div class="row">
+              <div>
+                <a href="" data-toggle="modal" data-target="#EditLeaveTypeModal"> <span class="input-group-addon edit"
+                    (click)="getLeaveTypeById1(leaveType)"><i class="fas fa-pen-nib"></i></span></a>
+              </div>
+              <div>
+                <a href="" data-toggle="modal" data-target="#deleteLeaveType" (click)="getLeaveTypeById(leaveType)">
+                  <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-  <div class="modal fade" id="deleteLeaveType" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+
+<div class="modal fade" id="deleteLeaveType" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -61,11 +63,12 @@
       </div>
       <div class="modal-footer">
         <div>
-         <button  type="button" (click)="deleteDepartment()" class="btn btn-danger  btn-lg" data-toggle="modal" data-dismiss="modal">Yes</button>
+          <button type="button" (click)="deleteDepartment()" class="btn btn-danger  btn-lg" data-toggle="modal"
+            data-dismiss="modal">Yes</button>
         </div>
         <div>
-        <button  type="button"  class="btn btn-success  btn-lg" data-toggle="modal" data-dismiss="modal">No</button>
-      </div>
+          <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-dismiss="modal">No</button>
+        </div>
       </div>
 
     </div>

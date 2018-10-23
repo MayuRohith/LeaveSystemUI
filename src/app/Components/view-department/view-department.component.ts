@@ -36,6 +36,12 @@ export class ViewDepartmentComponent implements OnInit {
     this.interactionService.sendDepartment(department);
   }
 
+  deleteDepartmentById(department) {
+    // this.departmentObj = department;
+      this.departmentObj = department;
+      console.log(this.departmentObj);
+  }
+
   createDepartment() {
     return this.departmentService.addDepartment(this.departmentObj).subscribe(data => {
       console.log(this.departmentObj);
