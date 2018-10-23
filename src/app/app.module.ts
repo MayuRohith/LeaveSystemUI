@@ -68,8 +68,9 @@ import { LeaveTypeService } from './services/leave-type.service';
     EditStatusComponent,
     EditDepartmentComponent,
     EditRoleComponent,
-    EditLeaveTypeComponent
- ],
+    EditLeaveTypeComponent,
+    RoutingComponents
+  ],
   imports: [
     CommonModule,
     BrowserModule,

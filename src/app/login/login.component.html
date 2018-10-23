@@ -10,23 +10,26 @@
             <br>
               <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input id="text" type="text" class="form-control login-input-username" name="email" placeholder="User Name">
+                  <input id="userName" type="text" class="form-control login-input-username" name="userName" [(ngModel)]="login.userName" placeholder="User Name">
                 </div>
                 <br><br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input id="password" type="password" class="form-control login-input-password" name="password" placeholder="Password">
+                    <input id="password" type="password" class="form-control login-input-password" name="password" [(ngModel)]="login.password" placeholder="Password">
                   </div>
                   <br>
                   <hr>
               <div class="form-group">
                 <a href="#">Forgot Password?</a>
-                      <button type="submit" class="btn btn-primary btn-circle float-right">Login</button>
+                      <button type="submit" class="btn btn-primary btn-circle float-right" (click)="getLoginAuth()">Login</button>
                 </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- <h2>Hello {{logedUser.userName}}</h2>
+  <h2> {{logedUser.userRole}}</h2>
+  <h2> {{logedUser.userDepartment}}</h2> -->
+  <h2>Hello {{logedUser}}</h2>
 </div>

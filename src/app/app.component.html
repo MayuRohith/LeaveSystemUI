@@ -1,10 +1,11 @@
 <div class="wrapper">
-  <app-side-nav [msgToChild]="helloChild"></app-side-nav>
-  <div class="main-panel">
-    <app-top-nav></app-top-nav>
+  <app-side-nav *ngIf="loggedIn"></app-side-nav>
+  <div *ngIf="loggedIn" class="main-panel">
+    <app-top-nav [userDataChild]="userData"></app-top-nav>
     <div class="content">      
         <button (click)="msgChild()"> msg to child</button>
     <router-outlet></router-outlet>
     </div>
   </div>
-  </div>
+
+  <app-login *ngIf="!loggedIn"></app-login>
