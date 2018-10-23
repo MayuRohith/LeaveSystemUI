@@ -1,4 +1,4 @@
-<div class="sidebar">   
+<div class="sidebar">
   <div class="logo">
     <a href="#" class="simple-text logo-normal">
       Leave System
@@ -24,14 +24,26 @@
           <p>Admin</p>
         </a>
       </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/holiday']">
+          <i class="material-icons">content_paste</i>
+          <p>Holiday</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/enrole']">
+            <i class="material-icons">content_paste</i>
+            <p>User</p>
+          </a>
+        </li>
     </ul>
 
     <div class="alert alert-success notification" id="alert-success">
       <span class="bold-font">Success:</span> All records were processed correctly!
-    </div>  
+    </div>
 
     <div class="alert alert-danger notification" id="alert-danger">
-        <span class="bold-font">Error:</span> This record is joining with another table.
-      </div>
+      <span class="bold-font">Error:</span> This record is joining with another table.
+    </div>
   </div>
 </div>
