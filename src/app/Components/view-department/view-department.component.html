@@ -32,7 +32,7 @@
                       class="fas fa-pen-nib"></i></span></a>
               </div>
               <div>
-                <a href="" data-toggle="modal" data-target="#delete-department">
+                <a href="" data-toggle="modal" data-target="#delete-department" (click)="getDepartmentById(department)">
                   <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
               </div>
             </div>
@@ -62,7 +62,7 @@
       </div>
       <div class="modal-footer">
         <div>
-          <button type="button" (click)=" deleteDepartment()" class="btn btn-danger  btn-lg" data-toggle="modal" data-dismiss="modal">Yes</button>
+          <button type="button" (click)="deleteDepartment()" class="btn btn-danger  btn-lg" data-toggle="modal" data-dismiss="modal">Yes</button>
         </div>
         <div>
           <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-dismiss="modal">No</button>
