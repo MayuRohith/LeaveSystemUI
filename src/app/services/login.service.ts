@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from '../Models/login.model';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,13 +12,12 @@ const httpOptions = {
 })
 export class LoginService {
 
-  private loginCredential = new Subject<any>();
+  private loginCredential = new BehaviorSubject<any>(null);
   loginCredential$ = this.loginCredential.asObservable();
 
   private urlLogin = 'http://localhost:8080/hrm_system/login';
   constructor(private http: HttpClient) { }
 
-  // tslint:disable-next-line:no-unused-expression
   public getLoginAuth(login: Login) {
     this.http.post(this.urlLogin, login).subscribe(data => {
       if (data != null) {
@@ -26,11 +25,7 @@ export class LoginService {
       } else {
         this.loginCredential.next('error');
       }
-
-
     });
-
-
   }
 
 

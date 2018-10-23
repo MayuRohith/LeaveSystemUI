@@ -15,4 +15,8 @@ export class LeaveTypeService {
   getLeaveType() {
     return this.http.get<ViewLeaveType[]>(this.viewLeaveTypeUrl);
   }
+
+  updateLeaveType(leaveType){
+    return this.http.put<ViewLeaveType>(this.viewLeaveTypeUrl+"/"+leaveType.id, leaveType);
+  }
 }
