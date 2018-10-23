@@ -20,10 +20,12 @@ export class AddLeaveTypeComponent implements OnInit {
   ngOnInit() {
 
   }
+
   addLeaveType() {
     this.leaveType.addLeaveType(this.addLeaveTypesObj).subscribe(data => {
-      this.addLeaveType();
       console.log(data);
+      // this.viewLeaveType();
+      this.interactionService.upadateMsg('success');
     });
   }
 }
