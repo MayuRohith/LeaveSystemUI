@@ -1,6 +1,7 @@
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,7 @@ import { EditRoleComponent } from './Components/edit-role/edit-role.component';
 import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-type.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LeaveTypeService } from './services/leave-type.service';
+import { ViewStatusComponent } from './Components/view-status/view-status.component';
 
 @NgModule({
   declarations: [
@@ -70,9 +72,11 @@ import { LeaveTypeService } from './services/leave-type.service';
     EditDepartmentComponent,
     EditRoleComponent,
     EditLeaveTypeComponent,
-    RoutingComponents
+    RoutingComponents,
+    ViewStatusComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

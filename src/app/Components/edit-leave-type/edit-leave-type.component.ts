@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { InteractionService } from 'src/app/UIService/interaction.service';
-import { ViewLeaveType } from 'src/app/Models/view-leave-type.model';
-import { LeaveTypeService } from 'src/app/services/leave-type.service';
+import { InteractionService } from '../../UIService/interaction.service';
+import { ViewLeaveType } from '../../Models/view-leave-type.model';
+import { LeaveTypeService } from '../../services/leave-type.service';
 
 @Component({
   selector: 'app-edit-leave-type',
@@ -10,26 +10,28 @@ import { LeaveTypeService } from 'src/app/services/leave-type.service';
 })
 export class EditLeaveTypeComponent implements OnInit {
 
-  leaveTypeObj = new ViewLeaveType();
-  constructor(private interactionService: InteractionService, private leaveTypeService: LeaveTypeService) { }
+  leaveTypObj = new ViewLeaveType();
+  constructor(private interactionService: InteractionService, private leavetypeservice: LeaveTypeService) { }
 
   ngOnInit() {
+    // this.interactionService.leaveTypeDataSource$.subscribe(data => {
+    //   console.log(data);
+    //   this.leaveTypObj = Object.assign({}, data);
     this.getRecord();
   }
-
-  getRecord(){
-    this.interactionService.leaveTypeDataSource$.subscribe(data=>{
-      // alert("test");
+  getRecord() {
+    this.interactionService.leaveTypeDataSource$.subscribe(data => {
+      this.leaveTypObj = data;
       console.log(data);
-      this.leaveTypeObj= Object.assign({}, data);
-    })
+      this.leaveTypObj = Object.assign({}, data);
+    });
   }
 
-  updateLeaveType(){
-    this.leaveTypeService.updateLeaveType(this.leaveTypeObj).subscribe(data=>{
-      console.log("Update Success");
-      this.interactionService.upadateMsg("success");
-    })
-  }
+  updateLeaveType() {
+    return this.leavetypeservice.updateLeaveType(this.leaveTypObj).subscribe(data => {
+      console.log(data);
+      this.interactionService.upadateMsg(' success ');
+    });
 
+  }
 }

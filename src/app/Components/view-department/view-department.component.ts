@@ -17,10 +17,10 @@ export class ViewDepartmentComponent implements OnInit {
 
   ngOnInit() {
     this.viewDepartment();
-    this.interactionService.msgDataSource$.subscribe(msg=>{
+    this.interactionService.msgDataSource$.subscribe(msg => {
       console.log('Update ' + msg);
       this.viewDepartment();
-    })
+    });
   }
 
   viewDepartment() {
@@ -30,18 +30,29 @@ export class ViewDepartmentComponent implements OnInit {
     });
   }
 
-
-
   getDepartmentById(department) {
-    //this.departmentObj = department;
+    // this.departmentObj = department;
     console.log(department);
     this.interactionService.sendDepartment(department);
+  }
 
+  deleteDepartmentById(department) {
+    // this.departmentObj = department;
+      this.departmentObj = department;
+      console.log(this.departmentObj);
   }
 
   createDepartment() {
     return this.departmentService.addDepartment(this.departmentObj).subscribe(data => {
       console.log(this.departmentObj);
+      this.viewDepartment();
+    });
+  }
+
+  deleteDepartment() {
+    return this.departmentService.deleteDepartment(this.departmentObj).subscribe(data => {
+      console.log(this.departmentObj);
+      this.viewDepartment();
     });
   }
 }

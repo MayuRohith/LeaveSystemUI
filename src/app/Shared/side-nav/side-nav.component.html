@@ -1,8 +1,6 @@
-
 <div class="sidebar">
-    Hi:{{childname}}
   <div class="logo">
-    <a class="simple-text logo-normal">
+    <a href="#" class="simple-text logo-normal">
       Leave System
     </a>
   </div>
@@ -21,37 +19,31 @@
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/department']">
+        <a class="nav-link" [routerLink]="['/admin']">
           <i class="material-icons">content_paste</i>
-          <p>department</p>
+          <p>Admin</p>
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/leavetype']">
-          <i class="material-icons">library_books</i>
-          <p>leave type</p>
+        <a class="nav-link" [routerLink]="['/holiday']">
+          <i class="material-icons">content_paste</i>
+          <p>Holiday</p>
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/status']">
-          <i class="material-icons">library_books</i>
-          <p>Status</p>
-        </a>
-      </li> 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/role']">
-          <i class="material-icons">Pending</i>
-          <p>role</p>
-        </a>
-      </li>
+          <a class="nav-link" [routerLink]="['/enrole']">
+            <i class="material-icons">content_paste</i>
+            <p>User</p>
+          </a>
+        </li>
     </ul>
 
     <div class="alert alert-success notification" id="alert-success">
       <span class="bold-font">Success:</span> All records were processed correctly!
-    </div>  
+    </div>
 
     <div class="alert alert-danger notification" id="alert-danger">
-        <span class="bold-font">Error:</span> This record is joining with another table.
-      </div>
+      <span class="bold-font">Error:</span> This record is joining with another table.
+    </div>
   </div>
 </div>

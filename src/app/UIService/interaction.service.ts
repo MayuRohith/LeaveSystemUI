@@ -18,11 +18,15 @@ export class InteractionService {
   msgDataSource$=this.msgDataSource.asObservable();
   leaveTypeDataSource$=this.leaveTypeDataSource.asObservable();
 
-  sendDepartment(department:Department){
+  // dataSourceDeparment = this.dataSource.asObservable();
+  // msgDataSource$ = this.msgDataSource.asObservable();
+  // leaveTypeDataSource$ = this.leaveTypeDataSource.asObservable();
+
+  sendDepartment(department: Department) {
     this.dataSource.next(department);
   }
 
-  upadateMsg(msg:string){
+  upadateMsg(msg: string) {
     this.msgDataSource.next(msg);
   }
 

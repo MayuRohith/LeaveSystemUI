@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LeaveTypeService } from 'src/app/services/leave-type.service';
-import { ViewLeaveType } from 'src/app/Models/view-leave-type.model';
-import { InteractionService } from 'src/app/UIService/interaction.service';
+import { LeaveTypeService } from '../../services/leave-type.service';
+import { ViewLeaveType } from '../../Models/view-leave-type.model';
+import { leave } from '@angular/core/src/profile/wtf_impl';
+import { InteractionService } from '../../UIService/interaction.service';
 
 @Component({
   selector: 'app-view-leave-type',
@@ -9,31 +10,44 @@ import { InteractionService } from 'src/app/UIService/interaction.service';
   styleUrls: ['./view-leave-type.component.css']
 })
 export class ViewLeaveTypeComponent implements OnInit {
-
   leaveTypes: ViewLeaveType[];
+  leaveTypeObj = new ViewLeaveType();
+
   constructor(private leaveTypeService: LeaveTypeService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.viewLeaveType();
     this.observeChange();
   }
-
-  viewLeaveType(){
-    this.leaveTypeService.getLeaveType().subscribe(data=>{
-      this.leaveTypes=data;
-    })
+  viewLeaveType() {
+    return this.leaveTypeService.getLeaveType().subscribe(data => {
+      this.leaveTypes = data;
+      console.log(data);
+    });
   }
 
-  getLeaveTypeById(leaveType){
+  getLeaveTypeById(leaveType) {
+    this.leaveTypeObj = leaveType;
+    console.log(this.leaveTypeObj);
+  }
+
+  getLeaveTypeById1(leaveType) {
     this.interactionService.sendLeaveType(leaveType);
     console.log(leaveType);
   }
 
-  observeChange(){
-    this.interactionService.msgDataSource$.subscribe(data=>{
+  observeChange() {
+    this.interactionService.msgDataSource$.subscribe(data => {
       console.log(data);
       this.viewLeaveType();
-    })
+    });
+  }
+
+  deleteDepartment(department) {
+    return this.leaveTypeService.deleteLeaveType(this.leaveTypeObj).subscribe(data => {
+      console.log(this.leaveTypeObj);
+      this.viewLeaveType();
+    });
   }
 
 }
