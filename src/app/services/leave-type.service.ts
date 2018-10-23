@@ -10,7 +10,7 @@ import { AddLeaveTypeComponent } from '../Components/add-leave-type/add-leave-ty
 })
 export class LeaveTypeService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private viewLeaveTypeUrl = 'http://localhost:8080/hrm_system/leavetype';
 
