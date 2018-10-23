@@ -18,20 +18,20 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="inputLeaveType">Leave Type</label>
-                      <input type="text" class="form-control form-control-sm" name="inputLeaveType" [(ngModel)]="addLeaveTypesObj.leaveType">
+                      <input type="text" class="form-control form-control-sm" name="leaveType" [(ngModel)]="addLeaveTypesObj.leaveType">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="inputEmail">Allocation</label>
-                      <input type="text" class="form-control form-control-sm">
+                      <label for="inputAllocation">Allocation</label>
+                      <input type="text" class="form-control form-control-sm" name="allocationDays" [(ngModel)]="addLeaveTypesObj.allocationDays">
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" id="btn-send" class="btn btn-primary float-right" data-toggle="modal"
-                  data-dismiss="modal" (click)="addLeaveType()"> Sumit</button>
+                  data-dismiss="modal" (click)="addLeaveType()"> Submit</button>
               </div>
             </form>
           </div>

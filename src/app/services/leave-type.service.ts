@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ViewLeaveType } from '../Models/view-leave-type.model';
 import { AddLeaveType } from '../Models/add-leave-type';
+import { AddLeaveTypeComponent } from '../Components/add-leave-type/add-leave-type.component';
 
 
 @Injectable({
@@ -23,5 +24,9 @@ export class LeaveTypeService {
 
   public addLeaveType(leaveType) {
     return this.http.post<AddLeaveType>(this.viewLeaveTypeUrl, leaveType);
+  }
+
+  public updateLeaveType(leaveType) {
+    return this.http.put<AddLeaveType>(this.viewLeaveTypeUrl + '/' + leaveType.id, leaveType);
   }
 }

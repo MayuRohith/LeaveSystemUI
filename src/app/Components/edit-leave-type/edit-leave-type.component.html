@@ -16,25 +16,25 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="inputEmail">Id</label>
-                  <input type="text" class="form-control form-control-sm">
+                  <input type="text" class="form-control form-control-sm" name="Id" readonly [(ngModel)]="leaveTypObj.id">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="inputEmail">Leave Type</label>
-                  <input type="text" class="form-control form-control-sm">
+                  <input type="text" class="form-control form-control-sm"name="leaveType"  [(ngModel)]="leaveTypObj.leaveType">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="inputEmail">Allocation</label>
-                  <input type="text" class="form-control form-control-sm">
+                  <input type="text" class="form-control form-control-sm" name="Allocation" [(ngModel)]="leaveTypObj.allocationDays">
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" id="btn-send" class="btn btn-primary float-right" data-toggle="modal" data-dismiss="modal">Sumit</button>
+            <button type="button" id="btn-send" class="btn btn-primary float-right" data-toggle="modal" data-dismiss="modal" (click)="updateLeaveType()">Update</button>
           </div>
         </form>
       </div>

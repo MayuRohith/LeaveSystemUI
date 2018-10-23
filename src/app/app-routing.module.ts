@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'holiday', component: AddHolidayComponent},
   {path: 'enrole', component: AddUserComponent},
   {path: 'role', component: AddRoleComponent},
-  {path: '**', redirectTo: 'login'},
+  {path: '**', redirectTo: 'user'},
   // {path: 'admin', component: AdminComponent},
   // {path: 'role', component: ViewRoleComponent},
   // {path: 'pendingreq', component: PendingReqComponent}

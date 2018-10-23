@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AddLeaveType } from '../../Models/add-leave-type';
 import { LeaveTypeService } from '../../services/leave-type.service';
+import { InteractionService } from '../../UIService/interaction.service';
 
 @Component({
   selector: 'app-add-leave-type',
@@ -12,16 +13,18 @@ export class AddLeaveTypeComponent implements OnInit {
   addLeaveTypes: AddLeaveType[];
   addLeaveTypesObj = new AddLeaveType();
 
-  constructor(private leaveType: LeaveTypeService) { }
+  constructor(private leaveType: LeaveTypeService, private interactionService: InteractionService) { }
 
   private addLeaveUrl = 'http://localhost:8080/hrm_system/leavetype';
 
   ngOnInit() {
+    this.addLeaveType();
   }
   addLeaveType() {
     this.leaveType.addLeaveType(this.addLeaveTypesObj).subscribe(data => {
       this.addLeaveType();
       console.log(data);
+      this.viewLeaveType();
     });
   }
 }

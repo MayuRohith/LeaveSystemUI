@@ -29,11 +29,13 @@ export class ViewDepartmentComponent implements OnInit {
       console.log(data);
     });
   }
+
   getDepartmentById(department) {
     // this.departmentObj = department;
     console.log(department);
     this.interactionService.sendDepartment(department);
   }
+
   createDepartment() {
     return this.departmentService.addDepartment(this.departmentObj).subscribe(data => {
       console.log(this.departmentObj);
