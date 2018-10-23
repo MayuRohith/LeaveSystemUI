@@ -94,7 +94,7 @@ body{
     color:#9c27b0;
 }
 
-h4 {
+h4, h5 {
     font-size: 16px;
 }
 
@@ -103,12 +103,22 @@ h4 {
     color: #ffffff;
     margin-top: -20px;
     padding: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px; 
     margin-left: -15px;
     margin-right: 20px;
+    border-bottom: none;
     border-radius: 6px !important;
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+}
+
+.modal-header .close {
+    font-size: 15px;
+    color: #333333;
+    padding: 1rem;
+    padding-top: 20px;
+    padding-right: 20px;
+    margin: -1rem -1rem -1rem auto;
 }
 
 .btn-sm {
@@ -135,6 +145,37 @@ h4 {
     font-size: 18px;
 }
 .trash{
-    color: red;
+    color: rgb(206, 37, 37);
     font-size: 18px;
+}
+.card-header-danger{
+    background-color:#dc3545;
+}
+
+.model-form{
+    padding-top: 15px;  
+}
+
+.container-custom {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.btn-add {
+    background-color: #8c249e !important;    
+    color: #ffffff;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    margin-right: -2px;
+    padding: 6px 14px;
+    
+}
+
+.card-title {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.plus-btn {
+    padding-right: 5px;
 }

@@ -30,14 +30,12 @@
           <td class="td-status-accept">
             Accepted
           </td>
-          <td><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModalCenter1">
+          <td><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
               Cancel
             </button></td>
 
         </tr>
         <tr>
-
-
           <td>Thornton</td>
           <td>@fat</td>
           <td>@fat</td>
@@ -71,7 +69,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="CancelLeaveModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -88,28 +86,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button onclick="test()" href="javascript:;" type="button" id="btn-send" class="btn btn-primary  btn-lg" data-toggle="modal" data-dismiss="modal">Send</button>
+        <button  type="button" id="btn-send-cancel-leave-history" class="btn btn-primary  btn-lg" data-toggle="modal" data-dismiss="modal">Send</button>
       </div>
     </div>
   </div>
 </div>
-
-
-<script>
-  $(document).ready(function () {
-    $("#btn-send").on("click", function () {
-      alert("clicked");
-    });
-  });
-
-  function test(){
-    alert("hi");
-  }
-
-  //   window.setTimeout(function () {
-  //     $("#alert-success").fadeTo(500, 0).slideUp(500, function () {
-  //         $(this).remove();
-  //     });
-  // }, 1000);
-
-</script>

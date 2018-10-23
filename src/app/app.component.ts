@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './Services/login.service';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,11 @@ export class AppComponent implements OnInit {
   title = 'LeaveSystemUI';
   loggedIn = false;
   userData: any;
+
+  msgChild() {
+    alert('test');
+  }
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {

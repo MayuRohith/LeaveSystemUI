@@ -28,8 +28,10 @@
               <div class="form-group">
                 <label class="bmd-label-floating">Leave Type</label>
                 <select class="form-control form-control-sm">
-                  <option value="" selected default hidden></option>
-                  <option></option>
+                  <option selected disabled>Select Leave Type</option>
+                  <option *ngFor="let leavetype of leaveTypes" value="{{leavetype.id}}">
+                    {{leavetype.leaveType}}
+                  </option>
                 </select>
               </div>
             </div>
@@ -58,5 +60,6 @@
       </div>
       <div class="clearfix"></div>
     </form>
+
   </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LeaveTypeService } from '../../services/leave-type.service';
+import { ViewLeaveType } from '../../Models/view-leave-type.model';
 
 @Component({
   selector: 'app-req-leave',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReqLeaveComponent implements OnInit {
 
-  constructor() { }
+  leaveTypes: ViewLeaveType[];
+
+  constructor(private leaveTypeService: LeaveTypeService) { }
 
   ngOnInit() {
+    this.viewAllLeaveTypes();
   }
 
+  viewAllLeaveTypes() {
+    this.leaveTypeService.getLeaveType().subscribe(data => {
+      this.leaveTypes = data;
+      console.log(data);
+    });
+  }
 }

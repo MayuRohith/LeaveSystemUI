@@ -25,8 +25,15 @@
   <script>
     $(document).ready(function () {
       $('#alert-success').hide();
-      $("#btn-send").on("click", function () {
+      $('#alert-danger').hide();
+      $("#btn-send-cancel-leave-history").on("click", function () {
         $("#alert-success").show().delay(5000).queue(function (n) {
+          $(this).hide();
+          n();
+        });
+      });
+      $("#btn-send-reject-pending-request").on("click", function () {
+        $("#alert-danger").show().delay(5000).queue(function (n) {
           $(this).hide();
           n();
         });

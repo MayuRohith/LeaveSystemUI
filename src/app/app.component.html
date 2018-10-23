@@ -3,7 +3,8 @@
   <div *ngIf="loggedIn" class="main-panel">
     <app-top-nav [userDataChild]="userData"></app-top-nav>
     <div class="content">      
-    <router-outlet></router-outlet> 
+        <button (click)="msgChild()"> msg to child</button>
+    <router-outlet></router-outlet>
     </div>
   </div>
 
