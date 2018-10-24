@@ -15,8 +15,6 @@ export class AddLeaveTypeComponent implements OnInit {
 
   constructor(private leaveType: LeaveTypeService, private interactionService: InteractionService) { }
 
-  private addLeaveUrl = 'http://localhost:8080/hrm_system/leavetype';
-
   ngOnInit() {
 
   }

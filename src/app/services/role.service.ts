@@ -12,10 +12,14 @@ export class RoleService {
     return this.http.get<Role[]>(this.roleUrl); // here we use get method if we use post then we have to use it on "post"
   }
   public deleteRole(role) {
-    return this.http.delete<Role>(this.roleUrl + '/' + role.id, role);
+    return this.http.delete<Role>(this.roleUrl + '/' + role.id);
   }
 
   public editRole(role) {
     return this.http.put<Role>(this.roleUrl + '/' + role.id, role);
+  }
+
+  public adddRole(role) {
+    return this.http.post<Role[]>(this.roleUrl, role);
   }
 }
