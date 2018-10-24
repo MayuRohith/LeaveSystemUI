@@ -6,9 +6,9 @@
     <!-- <p class="card-category">Complete your request</p> -->
   </div>
 
-  {{ leaveRequestForm.value | json}}
+  <!-- {{ leaveRequestForm.value | json}}
 
-  {{leaveRequestObj | json}}
+  {{leaveRequestObj | json}} -->
   <div class="card-body">
     <form [formGroup]="leaveRequestForm" (ngSubmit)="onSubmit()">
       <div class="row">
@@ -31,7 +31,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label class="bmd-label-floating">Leave Type</label>
-                <select formControlName="leaveType" class="form-control form-control-sm">
+                <select formControlName="leaveType" class="form-control form-control-sm" (change)="getRemainingDays()">
                   <option selected disabled>Select Leave Type</option>
                   <option *ngFor="let leavetype of leaveTypes" value="{{leavetype.id}}">
                     {{leavetype.leaveType}}
@@ -44,7 +44,7 @@
             <div class="col-md-8">
               <div class="form-group">
                 <label class="bmd-label-floating">Remaining Days</label>
-                <input type="number" class="form-control form-control-sm" min="1" readonly>
+                <input type="number" class="form-control form-control-sm" min="1" readonly value="{{remainingDays}}">
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
       <div class="col-md-12">
         <div class="float-right">
           <button type="submit" class="btn btn-primary">Apply</button>
-          <button (click)="getUserId()">test</button>
+          <!-- <button (click)="getUserId()">test</button> -->
         </div>
       </div>
       <div class="clearfix"></div>

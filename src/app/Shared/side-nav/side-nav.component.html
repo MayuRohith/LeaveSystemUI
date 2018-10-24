@@ -4,6 +4,7 @@
       Leave System
     </a>
   </div>
+  <!-- {{userData | json }} -->
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item " routerLinkActive="active">
@@ -12,6 +13,7 @@
           <p>Dashboard</p>
         </a>
       </li>
+      <ng-container *ngIf="userData.userRole === 'Admin'">
       <li class="nav-item " routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/previlage']">
           <i class="material-icons">person</i>
@@ -36,6 +38,7 @@
             <p>User</p>
           </a>
         </li>
+      </ng-container>
     </ul>
 
     <div class="alert alert-success notification" id="alert-success">

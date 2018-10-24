@@ -1,5 +1,3 @@
-
-
 <div class="card">
   <div class="card-header card-header-primary">
     <h4 class="card-title">Leave History</h4>
@@ -8,7 +6,6 @@
     <table class="table">
       <thead class="thead-primary">
         <tr>
-
           <th scope="col">Leave Type</th>
           <th scope="col">Start Date</th>
           <th scope="col">End Date</th>
@@ -19,49 +16,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-
-
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+        <tr *ngFor="let leaveRequest of leaveRequests">
+          <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+          <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+          <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+          <td>{{leaveRequest.leaveDays}}</td>
+          <td>{{leaveRequest.reason}}</td>
           <td class="td-status-accept">
-            Accepted
+            {{leaveRequest.statusId.status}}
           </td>
-          <td><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
-              Cancel
-            </button></td>
-
-        </tr>
-        <tr>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>@fat</td>
-          <td>@fat</td>
-          <td>@fat</td>
-          <td class="td-status-reject">
-            Rejected
-          </td>
-          <td></td>
-
-        </tr>
-        <tr>
-
-
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>@twitter</td>
-          <td>@twitter</td>
-          <td>@twitter</td>
-          <td class="td-status-reject">
-            Rejected
-          </td>
-          <td></td>
-
-        </tr>
-
+          <td>
+            <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+              <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
+                Cancel
+              </button>
+            <!-- </ng-container> -->
+            </td>
       </tbody>
     </table>
   </div>
@@ -86,7 +56,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button  type="button" id="btn-send-cancel-leave-history" class="btn btn-primary  btn-lg" data-toggle="modal" data-dismiss="modal">Send</button>
+        <button type="button" id="btn-send-cancel-leave-history" class="btn btn-primary  btn-lg" data-toggle="modal"
+          data-dismiss="modal">Send</button>
       </div>
     </div>
   </div>

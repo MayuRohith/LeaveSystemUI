@@ -5,6 +5,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { LeaveRequest } from 'src/app/Models/leave-request';
 import { LoginService } from 'src/app/Services/login.service';
 import { LeaveRequestService } from 'src/app/services/leave-request.service';
+import { LeaveService } from 'src/app/services/leave.service';
+import { InteractionService } from 'src/app/UIService/interaction.service';
 
 @Component({
   selector: 'app-req-leave',
@@ -17,17 +19,22 @@ export class ReqLeaveComponent implements OnInit {
 
   leaveRequestObj = new LeaveRequest();
 
-  userId: string;
-  
+  userId: number;
+  leaveTypeId: number;
+
+  remainingDays: number;
+
 
   constructor(
-    private leaveTypeService: LeaveTypeService, 
+    private leaveTypeService: LeaveTypeService,
     private loginService: LoginService,
-    private leaveRequestService:LeaveRequestService) { }
+    private leaveRequestService: LeaveRequestService,
+    private leaveService: LeaveService,
+    private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.viewAllLeaveTypes();
-   
+
   }
 
   viewAllLeaveTypes() {
@@ -44,30 +51,43 @@ export class ReqLeaveComponent implements OnInit {
     reason: new FormControl('')
   });
 
-  onSubmit(){
+  onSubmit() {
     var startDate = new Date(this.leaveRequestForm.value.startDate);
     var endDate = new Date(this.leaveRequestForm.value.endDate);
 
-    var leaveDays =endDate.getTime() - startDate.getTime();
+    var leaveDays = endDate.getTime() - startDate.getTime();
     var days = leaveDays / (1000 * 60 * 60 * 24) + 1;
-    
-    this.leaveRequestObj.leaveDays= days;
+
+    this.leaveRequestObj.leaveDays = days;
 
     this.leaveRequestObj.leaveTypeId = this.leaveRequestForm.value.leaveType;
     this.leaveRequestObj.reason = this.leaveRequestForm.value.reason;
     this.leaveRequestObj.startDate = startDate;
     this.leaveRequestObj.endDate = endDate;
-    this.leaveRequestObj.statusId=1;
+    this.leaveRequestObj.statusId = 1;
 
     this.loginService.loginCredential$.subscribe(data => {
       this.leaveRequestObj.userId = data.userId;
     });
-    
+
     console.log(this.leaveRequestObj);
 
-this.leaveRequestService.createLeaveRequest(this.leaveRequestObj).subscribe(msg => {
-  alert("leave request applied");
-})
+    this.leaveRequestService.createLeaveRequest(this.leaveRequestObj).subscribe(msg => {
+      alert("leave request applied");
+      this.interactionService.upadateMsg("success");
+    })
+  }
+
+  getRemainingDays() {
+    this.loginService.loginCredential$.subscribe(data => {
+      this.userId = data.userId;
+    });
+
+    this.leaveTypeId = this.leaveRequestForm.value.leaveType;
+
+    this.leaveService.getRemainingLeaveByUserIdAndLeaveType(this.userId, this.leaveTypeId).subscribe(data => {
+      this.remainingDays = data;
+    })
   }
 
 

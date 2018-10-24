@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginService.loginCredential$.subscribe(data => {
       if(data != null){
-        this.router.navigate(["/admin"]);
+        this.router.navigate(["/dashboard"]);
       }
     });
   }

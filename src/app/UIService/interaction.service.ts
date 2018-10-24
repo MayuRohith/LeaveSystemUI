@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Department } from '../Models/department';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { ViewLeaveType } from '../Models/view-leave-type.model';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class InteractionService {
   constructor() { }
 
   private dataSource=new Subject<Department>();
-  private msgDataSource=new Subject<string>();
+  private msgDataSource=new BehaviorSubject<string>(null);
   private leaveTypeDataSource = new Subject<ViewLeaveType>();
   
   dataSourceDeparment=this.dataSource.asObservable();

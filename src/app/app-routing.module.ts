@@ -15,7 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.component';
 
 const routes: Routes = [
-  {path: 'user', component: UserComponent},
+  {path: 'dashboard', component: UserComponent},
   {path: 'previlage', component: PrevilageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'department', component: AddDepartmentComponent},
@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'enrole', component: AddUserComponent},
   {path: 'role', component: AddRoleComponent},
   {path: 'admin', component: AdminComponent},
-  {path: '**', redirectTo: 'user'},
+  {path: '**', redirectTo: 'dashboard'},
   // {path: 'role', component: ViewRoleComponent},
   // {path: 'pendingreq', component: PendingReqComponent}
 ];
