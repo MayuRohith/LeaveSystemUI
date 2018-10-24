@@ -43,7 +43,7 @@ export class ViewLeaveTypeComponent implements OnInit {
     });
   }
 
-  deleteLeaveType(department) {
+  deleteLeaveType() {
     return this.leaveTypeService.deleteLeaveType(this.leaveTypeObj).subscribe(data => {
       console.log(this.leaveTypeObj);
       this.viewLeaveType();

@@ -41,10 +41,11 @@ export class ViewStatusComponent implements OnInit {
       this.viewStatus();
     });
   }
-  deleteStatus(status) {
+  deleteStatus() {
     return this.statusService.deleteStatus(this.statusObj).subscribe(data => {
       console.log(this.statusObj);
       this.viewStatus();
     });
   }
+  
 }
