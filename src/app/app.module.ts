@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './Shared/side-nav/side-nav.component';
 import { TopNavComponent } from './Shared/top-nav/top-nav.component';
@@ -80,7 +82,8 @@ import { StatusService } from './services/status.service';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserService,

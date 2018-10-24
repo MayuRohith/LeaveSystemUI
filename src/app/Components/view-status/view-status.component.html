@@ -1,15 +1,16 @@
 <div class="card">
   <div class="card-header card-header-primary">
-      <div class="row">
-          <div class="col-md-6">
-            <h4 class="card-title ">Status</h4>
-          </div>
-          <div class="col-md-6">
-            <span class="float-right">
-              <Button class="btn btn-primary btn-add" data-toggle="modal" data-target="#AddStatusModal"><i class="fas fa-plus plus-btn"></i> Status</Button>
-            </span>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="card-title ">Status</h4>
+      </div>
+      <div class="col-md-6">
+        <span class="float-right">
+          <Button class="btn btn-primary btn-add" data-toggle="modal" data-target="#AddStatusModal"><i class="fas fa-plus plus-btn"></i>
+            Status</Button>
+        </span>
+      </div>
+    </div>
   </div>
   <div class="card-body">
     <table class="table">
@@ -43,30 +44,22 @@
 </div>
 
 
-<div class="modal fade" id="deleteLeaveType" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-  <div class="modal-content">
-    <div class="modal-header model-header-primary card-header-danger">
-      <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="col-md-12">
-      <div class="form-group">
-        <label for="message-text" class="col-form-label">Really Want to Delete? it can not undone!</label>
+<div class="modal fade" id="deleteStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header model-header-primary card-header-danger">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
     <div class="modal-footer">
       <div>
        <button  type="button" class="btn btn-danger  btn-lg" data-toggle="modal" data-dismiss="modal"(click)="deleteStatus()">Yes</button>
       </div>
-      <div>
-      <button  type="button"  class="btn btn-success  btn-lg" data-toggle="modal" data-dismiss="modal">No</button>
-    </div>
-    </div>
 
+    </div>
   </div>
-</div>
 </div>

@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
-  @Input('msgToChild') childname;
+  @Input('userDataChild') userData;
   constructor() { }
 
   ngOnInit() {

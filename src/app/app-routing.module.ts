@@ -1,6 +1,5 @@
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { AddRoleComponent } from './Components/add-role/add-role.component';
-import { AddHolidayComponent } from './Components/add-holiday/add-holiday.component';
 import { AddStatusComponent } from './Components/add-status/add-status.component';
 import { AddLeaveTypeComponent } from './Components/add-leave-type/add-leave-type.component';
 import { AddDepartmentComponent } from './Components/add-department/add-department.component';
@@ -13,19 +12,20 @@ import { PrevilageComponent } from './Components/previlage/previlage.component';
 import { ViewRoleComponent } from './Components/view-role/view-role.component';
 import {PendingReqComponent} from './Components/pending-req/pending-req.component';
 import { AdminComponent } from './admin/admin.component';
+import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.component';
 
 const routes: Routes = [
-  {path: 'user', component: UserComponent},
+  {path: 'dashboard', component: UserComponent},
   {path: 'previlage', component: PrevilageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'department', component: AddDepartmentComponent},
   {path: 'leavetype', component: AddLeaveTypeComponent},
   {path: 'status', component: AddStatusComponent},
-  {path: 'holiday', component: AddHolidayComponent},
+  {path: 'holiday', component: ViewHolidayComponent},
   {path: 'enrole', component: AddUserComponent},
   {path: 'role', component: AddRoleComponent},
   {path: 'admin', component: AdminComponent},
-  {path: '**', redirectTo: 'user'},
+  {path: '**', redirectTo: 'dashboard'},
   // {path: 'role', component: ViewRoleComponent},
   // {path: 'pendingreq', component: PendingReqComponent}
 ];

@@ -1,5 +1,5 @@
 export class AddLeaveType {
 id: number;
-leaveType: String;
+leaveType: string;
 allocationDays: number;
 }
