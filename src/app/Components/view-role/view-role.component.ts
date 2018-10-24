@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Role } from '../../Models/role.model';
 import { RoleService } from '../../services/role.service';
+import { InteractionService } from '../../UIService/interaction.service';
 
 @Component({
   selector: 'app-view-role',
@@ -11,12 +12,17 @@ export class ViewRoleComponent implements OnInit {
   roles: Role[];
   roleObj = new Role();
   errorMsg: any;
-  constructor(private roleService: RoleService) {
+  constructor(private roleService: RoleService, private interactionService: InteractionService) {
   }
 
   // on time update thats why we use OnInit
   ngOnInit() {
     this.viewRole();
+    this.observeChange();
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      console.log('Update ' + msg);
+      this.viewRole();
+    });
   }
 
   viewRole() {
@@ -33,25 +39,29 @@ export class ViewRoleComponent implements OnInit {
       this.errorMsg = 'delete-error';
     }
   }
-  deleteRole() {
-    console.log('deleteRole method');
-    // this.roleService.deleteRole(this.roleObj).subscribe(data => {
-    //   // alert('Deleted Success');
-    //   this.viewRole();
-    // });
+  deleteRoleById(role) {
+    return this.roleService.deleteRole(this.roleObj).subscribe(data => {
+      console.log(this.roleObj);
+      this.viewRole();
+  });
+}
 
-    this.roleService.deleteRole(this.roleObj).subscribe(
-      (data) => {
-        alert('delete success');
-      },
-      error => this.getCode(error.status)
-    );
+getRoleById(role) {
+  // console.log("get Role");
+ // this.roleObj = role;
+  console.log(role);
+  this.interactionService.sendRole(role);
+}
 
-  }
+deleteRole(role) {
+  this.roleObj = role;
+  console.log(this.roleObj);
+}
 
-  getRoleById(role) {
-    // console.log("get Role");
-    this.roleObj = role;
-    console.log(this.roleObj);
-  }
+observeChange() {
+  this.interactionService.msgDataSource$.subscribe(data => {
+    console.log(data);
+    this.viewRole();
+  });
+}
 }

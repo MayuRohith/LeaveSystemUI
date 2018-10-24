@@ -1,4 +1,6 @@
+import { InteractionService } from 'src/app/UIService/interaction.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from 'src/app/Services/login.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,12 +8,22 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
-  @Input('msgToChild') childname;
-  constructor() { }
+  @Input('userDataChild') userData;
+
+  responseMsg: string;
+
+  constructor(private interactionService: InteractionService) { }
 
   ngOnInit() {
+    this.getResponse();
   }
 
-  
+  getResponse() {
+    this.interactionService.msgDataSource$.subscribe(data => {
+      this.responseMsg = data;
+    });
+  }
+
+
 
 }

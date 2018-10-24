@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './Shared/side-nav/side-nav.component';
 import { TopNavComponent } from './Shared/top-nav/top-nav.component';
@@ -38,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LeaveTypeService } from './services/leave-type.service';
 import { ViewStatusComponent } from './Components/view-status/view-status.component';
 import { EditUserComponent } from './Components/edit-user/edit-user.component';
+import { StatusService } from './services/status.service';
 
 @NgModule({
   declarations: [
@@ -81,11 +84,13 @@ import { EditUserComponent } from './Components/edit-user/edit-user.component';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserService,
-    LeaveTypeService
+    LeaveTypeService,
+    StatusService
   ],
   bootstrap: [AppComponent]
 })

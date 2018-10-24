@@ -19,22 +19,21 @@
           <th scope="col">Id</th>
           <th scope="col">Status</th>
           <th scope="col"></th>
+
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+  <tr *ngFor="let status of statuses">
+          <td>{{status.id}}</td>
+          <td>{{status.status}}</td>          
           <td>
             <div class="row">
               <div>
-                <a href="" data-toggle="modal" data-target="#EditStatusModal"> <span class="input-group-addon edit"><i
-                      class="fas fa-pen-nib"></i></span></a>
+                <a href="" data-toggle="modal" data-target="#EditStatusModal"(click)="getStatusById(status)"> <span class="input-group-addon edit"><i class="fas fa-pen-nib"></i></span></a>
               </div>
               <div>
-                <a href="" data-toggle="modal" data-target="#deleteStatus">
-                  <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
+                <a href="" data-toggle="modal" data-target="#deleteLeaveType" (click)="getStatusById(status)">
+                   <span class="input-group-addon trash"> <i class="fas fa-trash-alt"></i></span></a>
               </div>
             </div>
           </td>
@@ -55,19 +54,10 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="message-text" class="col-form-label">Really Want to Delete? it can not undone!</label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div>
-          <button type="button" class="btn btn-danger  btn-lg" data-toggle="modal"
-            data-dismiss="modal">Yes</button>
-        </div>
-        <div>
-          <button type="button" class="btn btn-success  btn-lg" data-toggle="modal" data-dismiss="modal">No</button>
-        </div>
+    </div>
+    <div class="modal-footer">
+      <div>
+       <button  type="button" class="btn btn-danger  btn-lg" data-toggle="modal" data-dismiss="modal"(click)="deleteStatus()">Yes</button>
       </div>
 
     </div>

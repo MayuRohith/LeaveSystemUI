@@ -1,59 +1,55 @@
-
 <div class="card ">
   <div class="card-header card-header-primary">
     <h4 class="card-title">Enrole New User</h4>
   </div>
+  <!-- {{ addUserForm.value | json}} -->
   <div class="card-body">
-    <form class="container-fluid">
+    <form [formGroup]="addUserForm" class="container-fluid" (ngSubmit)="onSubmit()">
       <div class="form-row ">
         <div class="form-group col-md-4 ">
           <label for="inputEmail4">User Name</label>
-          <input type="text" class="form-control form-control-sm">
+          <input formControlName="userName" type="text" class="form-control form-control-sm">
         </div>
         <div class="form-group col-md-5">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control form-control-sm" id="inputEmail4">
+          <input formControlName="email" type="email" class="form-control form-control-sm" >
         </div>
         <div class="form-group col-md-3">
           <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control form-control-sm" id="inputPassword4">
+          <input formControlName="password" type="password" class="form-control form-control-sm" >
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputFirstName">First Name</label>
-          <input type="text" class="form-control form-control-sm" id="inputFirstName">
+          <input formControlName="firstName" type="text" class="form-control form-control-sm" >
         </div>
         <div class="form-group col-md-6">
           <label for="inputLastName">Last Name</label>
-          <input type="text" class="form-control form-control-sm" id="inputLastName">
+          <input formControlName="lastName" type="text" class="form-control form-control-sm" >
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputRole">Role</label>
-          <select id="inputRole" class="form-control form-control-sm">
+          <select formControlName="roleId"  class="form-control form-control-sm">
             <option selected default hidden>Select Role</option>
-            <option>...</option>
-            <option>..</option>
-            <option>.</option>
+            <option *ngFor="let role of roles" value="{{role.id}}">{{role.roleName}}</option>
           </select>
         </div>
 
         <div class="form-group col-md-4">
           <label for="inputDepartment">Department</label>
-          <select id="inputDepartment" class="form-control form-control-sm">
+          <select formControlName="departmentId"  class="form-control form-control-sm">
             <option selected default hidden>Select Department</option>
-            <option>.</option>
-            <option>..</option>
-            <option>...</option>
+            <option *ngFor="let department of departments" value="{{department.id}}">{{department.departmentName}}</option>
           </select>
         </div>
         <div class="form-group col-md-4">
           <label for="inputDate">Join Date</label>
-          <input type="date" class="form-control form-control-sm">
+          <input formControlName="joinDate" type="date" class="form-control form-control-sm">
         </div>
       </div>
       <div class="col-md-12">

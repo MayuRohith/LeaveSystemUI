@@ -26,12 +26,12 @@ export class ViewLeaveTypeComponent implements OnInit {
     });
   }
 
-  getLeaveTypeById(leaveType) {
+  deleteLeaveTypeById(leaveType) {
     this.leaveTypeObj = leaveType;
     console.log(this.leaveTypeObj);
   }
 
-  getLeaveTypeById1(leaveType) {
+  getLeaveTypeById(leaveType) {
     this.interactionService.sendLeaveType(leaveType);
     console.log(leaveType);
   }
@@ -43,7 +43,7 @@ export class ViewLeaveTypeComponent implements OnInit {
     });
   }
 
-  deleteDepartment(department) {
+  deleteLeaveType(department) {
     return this.leaveTypeService.deleteLeaveType(this.leaveTypeObj).subscribe(data => {
       console.log(this.leaveTypeObj);
       this.viewLeaveType();

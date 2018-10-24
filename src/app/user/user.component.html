@@ -2,10 +2,10 @@
 
 <div class="row">
   <div class="col-md-8">
-    <app-req-leave></app-req-leave>
+    <app-req-leave *ngIf="userRole === 'Employee'"></app-req-leave>
   </div>
   <div class="col-md-4">
-    <app-remain-leave></app-remain-leave>
+    <app-remain-leave *ngIf="userRole === 'Employee'"></app-remain-leave>
   </div>
 </div>
 <div class="row">
@@ -13,6 +13,6 @@
     <app-leave-history></app-leave-history>
   </div>
   <div class="col-md-12">
-    <app-pending-req></app-pending-req>
+    <app-pending-req *ngIf="userRole === 'Admin'"></app-pending-req>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-side-nav *ngIf="loggedIn"></app-side-nav>
+  <app-side-nav [userDataChild]="userData" *ngIf="loggedIn"></app-side-nav>
   <div *ngIf="loggedIn" class="main-panel">
     <app-top-nav [userDataChild]="userData"></app-top-nav>
     <div class="content">

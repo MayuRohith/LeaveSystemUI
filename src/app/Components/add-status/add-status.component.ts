@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Status } from 'src/app/Models/status.model';
+import { StatusService } from 'src/app/services/status.service';
+import { InteractionService } from 'src/app/UIService/interaction.service';
 
 @Component({
   selector: 'app-add-status',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-status.component.css']
 })
 export class AddStatusComponent implements OnInit {
-
-  constructor() { }
+  addStatusObj = new Status();
+  status:"";
+  constructor(private statusService: StatusService, private interactionService: InteractionService) { }
 
   ngOnInit() {
   }
 
+
+  addStatus() {
+    this.statusService.createStatus(this.addStatusObj).subscribe(data => {
+      console.log(data);
+      // this.viewLeaveType();
+      this.interactionService.upadateMsg('success');
+    });
+  }
+  
 }

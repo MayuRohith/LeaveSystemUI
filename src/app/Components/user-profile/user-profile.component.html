@@ -18,16 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+        <tr *ngFor="let user of users">
+          <td>{{user.userName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.roleId.roleName}}</td>
+          <td>{{user.departmentId.departmentName}}</td>
+          <td>{{user.joinDate | date: 'yyyy-MM-dd'}}</td>
+          <td>{{user.servicePeriod}}</td>
           <td>
             <div class="row">
               <div>
