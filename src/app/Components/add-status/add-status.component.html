@@ -16,13 +16,13 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="inputEmail">Status</label>
-                  <input type="text" class="form-control form-control-sm">
+                  <input type="text" class="form-control form-control-sm" name="status name" [(ngModel)]="addStatusObj.status">
                 </div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" id="btn-send" class="btn btn-primary float-right" data-toggle="modal" data-dismiss="modal">Sumit</button>
+            <button type="button" id="btn-send" class="btn btn-primary float-right" data-toggle="modal" data-dismiss="modal"(click)="addStatus()">Sumit</button>
           </div>
         </form>
       </div>

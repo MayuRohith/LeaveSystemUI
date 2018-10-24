@@ -37,6 +37,7 @@ import { EditLeaveTypeComponent } from './Components/edit-leave-type/edit-leave-
 import { HttpClientModule } from '@angular/common/http';
 import { LeaveTypeService } from './services/leave-type.service';
 import { ViewStatusComponent } from './Components/view-status/view-status.component';
+import { StatusService } from './services/status.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ViewStatusComponent } from './Components/view-status/view-status.compon
   ],
   providers: [
     UserService,
-    LeaveTypeService
+    LeaveTypeService,
+    StatusService
   ],
   bootstrap: [AppComponent]
 })
