@@ -4,22 +4,26 @@
       <h4 class="card-title">Available Leave</h4>
     </div>
     <div class="card-body">
-
+     
       <div class="row row-custom">
-        <div class="col-md-6  col-sm-6">
+        <div class="col-md-6  col-sm-6" *ngFor="let leave of leavesArray">
           <div class="card sub-card">
-            <div class="card-header card-header-custom" style="background-color: red">
+          
+            <div *ngIf="true" class="card-header card-header-custom card-ok">
+        
+          
               <div class="row">
-                <div class="remain">2</div>
+                <div class="remain">{{leave.remainingDays}}</div>
                 <div class="devider">/</div>
-                <div class="total">10</div>
+                <div class="total">{{leave.allocationDays}}</div>
               </div>
             </div>
             <div class="card-body card-body-custom">
-              <span class="float-right">SPECIAL</span>
+              <span class="float-right">{{leave.leaveType | uppercase }}</span>
             </div>
           </div>
         </div>
+        <!-- 
         <div class="col-md-6  col-sm-6">
           <div class="card sub-card">
             <div class="card-header card-header-custom card-ok" >
@@ -66,6 +70,7 @@
           </div>
         </div>
       </div>
+       -->
     </div>
   </div>
 
