@@ -14,7 +14,7 @@ export class LeaveService {
     return this.http.get<number>(this.levaeUrl+"/"+userId+"/"+leaveTypeId);
   }
   public getRemainingLeaveByUserId(userId){
-    return this.http.get<number>(this.levaeUrl+"/"+userId+"/");
+    return this.http.get<number>(this.levaeUrl+"/"+userId);
   }
   
 }
