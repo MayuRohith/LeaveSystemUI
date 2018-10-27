@@ -35,7 +35,7 @@
         <div class="form-group col-md-4">
           <label for="inputRole">Role</label>
           <select formControlName="roleId"  class="form-control form-control-sm">
-            <option selected default hidden>Select Role</option>
+            <option selected disabled>Select Role</option>
             <option *ngFor="let role of roles" value="{{role.id}}">{{role.roleName}}</option>
           </select>
         </div>
@@ -43,7 +43,7 @@
         <div class="form-group col-md-4">
           <label for="inputDepartment">Department</label>
           <select formControlName="departmentId"  class="form-control form-control-sm">
-            <option selected default hidden>Select Department</option>
+            <option selected disabled>Select Department</option>
             <option *ngFor="let department of departments" value="{{department.id}}">{{department.departmentName}}</option>
           </select>
         </div>

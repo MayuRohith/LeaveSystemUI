@@ -41,6 +41,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit() {
     this.getRoles();
     this.getDepartments();
+    this.clearFields();
   }
 
 
@@ -71,6 +72,7 @@ export class AddUserComponent implements OnInit {
       console.log('new user create successfully');
       this.msg = 'success';
       this.interactionService.upadateMsg('success');
+      this.clearFields();
     });
 
     if (this.msg === 'fail') {
@@ -91,5 +93,15 @@ export class AddUserComponent implements OnInit {
     });
   }
 
+  clearFields(){
+    this.addUserForm.patchValue({userName: ""});
+    this.addUserForm.patchValue({email: ""});
+    this.addUserForm.patchValue({password: ""});
+    this.addUserForm.patchValue({firstName: ""});
+    this.addUserForm.patchValue({lastName: ""});
+    this.addUserForm.patchValue({roleId: "Select Role"});
+    this.addUserForm.patchValue({departmentId: "Select Department"});
+    this.addUserForm.patchValue({joinDate: ""});
+  }
 
 }
