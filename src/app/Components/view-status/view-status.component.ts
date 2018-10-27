@@ -9,9 +9,9 @@ import { InteractionService } from 'src/app/UIService/interaction.service';
   styleUrls: ['./view-status.component.css']
 })
 export class ViewStatusComponent implements OnInit {
-  statuses:Status[];
-  statusObj=new Status();
-  constructor(private statusService:StatusService,private interactionService: InteractionService) { }
+  statuses: Status[];
+  statusObj = new Status();
+  constructor(private statusService: StatusService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.viewStatus();
@@ -27,7 +27,7 @@ export class ViewStatusComponent implements OnInit {
     });
   }
   getStatusById(status) {
-     this.statusObj = status;
+    this.statusObj = status;
     console.log(status);
     this.interactionService.sentStatus(status);
   }
@@ -47,5 +47,9 @@ export class ViewStatusComponent implements OnInit {
       this.viewStatus();
     });
   }
-  
+
+  addStatusClick() {
+    this.interactionService.upadateMsg("click");
+  }
+
 }

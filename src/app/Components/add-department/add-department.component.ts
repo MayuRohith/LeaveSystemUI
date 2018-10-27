@@ -17,13 +17,24 @@ export class AddDepartmentComponent implements OnInit {
 
   private addLeaveUrl = 'http://localhost:8080/hrm_system/department';
   ngOnInit() {
+    this.getClickResponse();
   }
 
   addDepart() {
     this.department.addDepartment(this.addTypeDepartmentObj).subscribe(data => {
       console.log(data);
       this.interactionService.upadateMsg('success');
+      this.clear();
     });
   }
 
+  clear() {
+    this.addTypeDepartmentObj.departmentName = '';
+  }
+
+  getClickResponse() {
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      this.clear();
+    });
+  }
 }

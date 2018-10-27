@@ -43,25 +43,29 @@ export class ViewRoleComponent implements OnInit {
     return this.roleService.deleteRole(this.roleObj).subscribe(data => {
       console.log(this.roleObj);
       this.viewRole();
-  });
-}
+    });
+  }
 
-getRoleById(role) {
-  // console.log("get Role");
- // this.roleObj = role;
-  console.log(role);
-  this.interactionService.sendRole(role);
-}
+  getRoleById(role) {
+    // console.log("get Role");
+    // this.roleObj = role;
+    console.log(role);
+    this.interactionService.sendRole(role);
+  }
 
-deleteRole(role) {
-  this.roleObj = role;
-  console.log(this.roleObj);
-}
+  deleteRole(role) {
+    this.roleObj = role;
+    console.log(this.roleObj);
+  }
 
-observeChange() {
-  this.interactionService.msgDataSource$.subscribe(data => {
-    console.log(data);
-    this.viewRole();
-  });
-}
+  observeChange() {
+    this.interactionService.msgDataSource$.subscribe(data => {
+      console.log(data);
+      this.viewRole();
+    });
+  }
+
+  addRoleClick() {
+    this.interactionService.upadateMsg("click");
+  }
 }

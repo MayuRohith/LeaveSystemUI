@@ -38,8 +38,8 @@ export class ViewDepartmentComponent implements OnInit {
 
   deleteDepartmentById(department) {
     // this.departmentObj = department;
-      this.departmentObj = department;
-      console.log(this.departmentObj);
+    this.departmentObj = department;
+    console.log(this.departmentObj);
   }
 
   createDepartment() {
@@ -54,5 +54,9 @@ export class ViewDepartmentComponent implements OnInit {
       console.log(this.departmentObj);
       this.viewDepartment();
     });
+  }
+
+  addDepartmentClick() {
+    this.interactionService.upadateMsg('clicked');
   }
 }

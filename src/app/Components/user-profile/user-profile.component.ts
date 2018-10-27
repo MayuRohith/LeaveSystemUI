@@ -12,20 +12,25 @@ export class UserProfileComponent implements OnInit {
 
   users: User[];
 
-  constructor(private userService: UserService,private interactionService:InteractionService) { }
+  constructor(private userService: UserService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.getAllUsers();
-    this.interactionService.msgDataSource$.subscribe(msg =>{
-      console.log('Update',msg);
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      console.log('Update', msg);
       this.getAllUsers();
-    })
+    });
   }
 
-  getAllUsers(){
-    return this.userService.getAllUser().subscribe(data=>{
-      this.users=data;
-    })
+  getAllUsers() {
+    return this.userService.getAllUser().subscribe(data => {
+      this.users = data;
+    });
+  }
+
+  getUserById(user) {
+    this.interactionService.sendUser(user);
+    console.log(user);
   }
 
 }

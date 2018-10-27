@@ -1,7 +1,7 @@
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -90,7 +90,8 @@ import { StatusService } from './services/status.service';
   providers: [
     UserService,
     LeaveTypeService,
-    StatusService
+    StatusService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

@@ -50,4 +50,8 @@ export class ViewLeaveTypeComponent implements OnInit {
     });
   }
 
+  addLeaveTypeClick() {
+    this.interactionService.upadateMsg("clicked");
+  }
+
 }

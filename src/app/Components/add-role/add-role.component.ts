@@ -14,6 +14,7 @@ export class AddRoleComponent implements OnInit {
   constructor(private roleService: RoleService, private interactionService: InteractionService) { }
 
   ngOnInit() {
+    this.getClickResponse();
   }
 
   addRole() {
@@ -23,4 +24,13 @@ export class AddRoleComponent implements OnInit {
     });
   }
 
+  clear() {
+    this.addRoleObj.roleName = '';
+  }
+
+  getClickResponse() {
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      this.clear();
+    });
+  }
 }

@@ -10,10 +10,11 @@ import { InteractionService } from 'src/app/UIService/interaction.service';
 })
 export class AddStatusComponent implements OnInit {
   addStatusObj = new Status();
-  status:"";
+  status: "";
   constructor(private statusService: StatusService, private interactionService: InteractionService) { }
 
   ngOnInit() {
+    this.getClickResponse();
   }
 
 
@@ -24,5 +25,15 @@ export class AddStatusComponent implements OnInit {
       this.interactionService.upadateMsg('success');
     });
   }
-  
+
+  clear() {
+    this.addStatusObj.status = '';
+  }
+
+  getClickResponse() {
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      this.clear();
+    });
+  }
+
 }

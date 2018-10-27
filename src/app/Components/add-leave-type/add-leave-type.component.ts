@@ -16,12 +16,23 @@ export class AddLeaveTypeComponent implements OnInit {
   constructor(private leaveType: LeaveTypeService, private interactionService: InteractionService) { }
 
   ngOnInit() {
-
+    this.getClickResponse();
   }
   addLeaveType() {
     this.leaveType.addLeaveType(this.addLeaveTypesObj).subscribe(data => {
       console.log(data);
       this.interactionService.upadateMsg('success');
+    });
+  }
+
+  clear() {
+    this.addLeaveTypesObj.leaveType = '';
+    this.addLeaveTypesObj.allocationDays = null;
+  }
+
+  getClickResponse() {
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      this.clear();
     });
   }
 }

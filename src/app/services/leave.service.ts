@@ -10,13 +10,13 @@ export class LeaveService {
 
   private levaeUrl = 'http://localhost:8080/hrm_system/leave';
 
-  public getRemainingLeaveByUserIdAndLeaveType(userId, leaveTypeId){
-    return this.http.get<number>(this.levaeUrl+"/"+userId+"/"+leaveTypeId);
+  public getRemainingLeaveByUserIdAndLeaveType(userId, leaveTypeId) {
+    return this.http.get<number>(this.levaeUrl + '/' + userId + '/' + leaveTypeId);
   }
-  public getRemainingLeaveByUserId(userId){
-    return this.http.get<number>(this.levaeUrl+"/"+userId);
+  public getRemainingLeaveByUserId(userId) {
+    return this.http.get<number>(this.levaeUrl + '/' + userId);
   }
-  
+
 }
 
 

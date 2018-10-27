@@ -32,6 +32,6 @@ export class EditLeaveTypeComponent implements OnInit {
       console.log(data);
       this.interactionService.upadateMsg(' success ');
     });
-
   }
+
 }
