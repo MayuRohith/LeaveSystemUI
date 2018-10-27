@@ -3,37 +3,137 @@
     <h4 class="card-title">Leave History</h4>
   </div>
   <div class="card-body">
-    <table class="table">
-      <thead class="thead-primary">
-        <tr>
-          <th scope="col">Leave Type</th>
-          <th scope="col">Start Date</th>
-          <th scope="col">End Date</th>
-          <th scope="col">No of Days</th>
-          <th scope="col">Reason</th>
-          <th scope="col">Status</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let leaveRequest of leaveRequests">
-          <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
-          <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
-          <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
-          <td>{{leaveRequest.leaveDays}}</td>
-          <td>{{leaveRequest.reason}}</td>
-          <td class="td-status-accept">
-            {{leaveRequest.statusId.status}}
-          </td>
-          <!-- <td> -->
-            <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active tabs-font-color" id="home-tab" data-toggle="tab" href="#home" role="tab"
+          aria-controls="home" aria-selected="true">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link tabs-font-color" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+          aria-selected="false">Approved</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link tabs-font-color" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          aria-selected="false">Rejected</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+        <table class="table">
+          <thead class="thead-primary">
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Leave Type</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">No of Days</th>
+              <th scope="col">Reason</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leaveRequest of leaveRequests">
+              <td></td>
+              <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+              <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.leaveDays}}</td>
+              <td>{{leaveRequest.reason}}</td>
+              <td class="td-status-accept">
+                {{leaveRequest.statusId.status}}
+              </td>
+             
+              <!-- <td> -->
+              <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
               <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
-                Cancel
-              </button> -->
-            <!-- </ng-container> -->
-            <!-- </td> -->
-      </tbody>
-    </table>
+                            Cancel
+                          </button> -->
+              <!-- </ng-container> -->
+              <!-- </td> -->
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+        <table class="table">
+          <thead class="thead-primary">
+            <tr>
+              <th scope="col">User Name</th>
+              <th scope="col">Leave Type</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">No of Days</th>
+              <th scope="col">Reason</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leaveRequest of leaveRequests">
+              <td></td>
+              <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+              <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.leaveDays}}</td>
+              <td>{{leaveRequest.reason}}</td>
+              <td class="td-status-accept">
+                {{leaveRequest.statusId.status}}
+              </td>
+              <!-- <td> -->
+              <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+              <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
+                        Cancel
+                      </button> -->
+              <!-- </ng-container> -->
+              <!-- </td> -->
+          </tbody>
+        </table>
+
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+        <table class="table">
+          <thead class="thead-primary">
+            <tr>
+              <th scope="col">User Name</th>
+              <th scope="col">Leave Type</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">No of Days</th>
+              <th scope="col">Reason</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leaveRequest of leaveRequests">
+              <td></td>
+              <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+              <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+              <td>{{leaveRequest.leaveDays}}</td>
+              <td>{{leaveRequest.reason}}</td>
+              <td class="td-status-accept">
+                {{leaveRequest.statusId.status}}
+              </td>
+              <!-- <td> -->
+              <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+              <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
+                        Cancel
+                      </button> -->
+              <!-- </ng-container> -->
+              <!-- </td> -->
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+
   </div>
 </div>
 

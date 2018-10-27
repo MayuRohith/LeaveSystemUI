@@ -1,6 +1,6 @@
 import { InteractionService } from './../../UIService/interaction.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/Models/user';
 import { RoleService } from 'src/app/services/role.service';
@@ -8,13 +8,14 @@ import { DepartmentService } from 'src/app/services/department.service';
 import { Role } from 'src/app/Models/role.model';
 import { Department } from 'src/app/Models/department';
 
+
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
+departmentHasError=true;
   userObj = new User();
 
   roles: Role[];
@@ -28,14 +29,35 @@ export class AddUserComponent implements OnInit {
     private interactionService: InteractionService) { }
 
   addUserForm = new FormGroup({
-    userName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    roleId: new FormControl(''),
+    userName: new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(3)
+    ])),
+    email: new FormControl('',Validators.compose([
+      Validators.required,
+      //Validators.minLength(3),
+      Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
+    ])),
+    password: new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(3)
+    ])),
+    firstName: new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(3)
+    ])),
+    lastName: new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(3)
+    ])),
+    roleId: new FormControl('',Validators.compose([
+      Validators.required
+    ])),
     departmentId: new FormControl(''),
-    joinDate: new FormControl('')
+    joinDate: new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(3)
+    ])),
   });
 
   ngOnInit() {
@@ -43,7 +65,13 @@ export class AddUserComponent implements OnInit {
     this.getDepartments();
     this.clearFields();
   }
-
+// validateDepartment(value){
+//   if (value == 'default'){
+//     this.departmentHasError=true;
+//   }else{
+//     this.departmentHasError=false;
+//   }
+// }
 
   onSubmit() {
 

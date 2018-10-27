@@ -19,7 +19,8 @@
         <ng-container *ngFor="let leaveRequest of leaveRequests">
           <tr *ngIf="leaveRequest.statusId.id === 1">
 
-            <td>{{leaveRequest.userId.firstName + " " + leaveRequest.userId.lastName}}</td>
+            
+            <td><a href="#"><i class="far fa-eye element-style"></i> &nbsp;{{leaveRequest.userId.firstName + " " + leaveRequest.userId.lastName}}</a></td>
             <!-- <td>{{leaveRequest.user}}</td> -->
             <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
             <td>{{leaveRequest.startDate | date : 'yyyy-MM-dd' }}</td>

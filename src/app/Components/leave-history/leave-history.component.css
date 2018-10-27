@@ -6,6 +6,9 @@
     color: red;
 }
 
+.tabs-font-color{
+    font-weight: bold;
+}
 /* .inactive{
     display:none;
 }
@@ -13,3 +16,7 @@
 .active{
     display:initial;
 } */
+
+table thead tr th{
+    border-top: none !important;
+}
