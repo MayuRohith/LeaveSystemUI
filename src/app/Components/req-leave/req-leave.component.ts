@@ -34,6 +34,7 @@ export class ReqLeaveComponent implements OnInit {
 
   ngOnInit() {
     this.viewAllLeaveTypes();
+    this.clearFields();
   }
 
   viewAllLeaveTypes() {
@@ -93,7 +94,7 @@ export class ReqLeaveComponent implements OnInit {
 
   clearFields(){
     this.leaveRequestForm.patchValue({reason: ""});
-    this.leaveRequestForm.patchValue({leaveType: ""});
+    this.leaveRequestForm.patchValue({leaveType: "Select Leave Type"});
     this.leaveRequestForm.patchValue({startDate: ""});
     this.leaveRequestForm.patchValue({endDate: ""});
     this.leaveRequestForm.patchValue({remainingDays: ""});

@@ -10,9 +10,9 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <app-leave-history></app-leave-history>
+    <app-pending-req *ngIf="userRole === 'Admin'"></app-pending-req>
   </div>
   <div class="col-md-12">
-    <app-pending-req *ngIf="userRole === 'Admin'"></app-pending-req>
+    <app-leave-history></app-leave-history>
   </div>
 </div>
