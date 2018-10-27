@@ -25,6 +25,7 @@
             <td>{{leaveRequest.startDate | date : 'yyyy-MM-dd' }}</td>
             <td>{{leaveRequest.endDate | date: 'yyyy-MM-dd' }}</td>
             <td>{{leaveRequest.leaveDays}}</td>
+            <td>{{leaveRequest.reason}}</td>
             <td>
               <div class="row">
                 <div><button type="button" class="btn btn-sm btn-success" style="margin-right:5px" (click)="approveLeave(leaveRequest.id)">Accept</button></div>

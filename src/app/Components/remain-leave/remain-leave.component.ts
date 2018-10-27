@@ -14,7 +14,6 @@ export class RemainLeaveComponent implements OnInit {
   constructor(private leaveService: LeaveService, private interactionService: InteractionService, private loginService: LoginService) { }
 
   ngOnInit() {
-    this.remainingLeaveDetails();
     this.loginService.loginCredential$.subscribe(data => {
       this.userId = data.userId;
       this.remainingLeaveDetails();
