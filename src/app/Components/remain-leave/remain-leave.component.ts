@@ -19,10 +19,10 @@ export class RemainLeaveComponent implements OnInit {
       this.userId = data.userId;
       this.remainingLeaveDetails();
     });
-     this.interactionService.msgDataSource$.subscribe(msg => {
-    console.log('Update ' + msg);
-    this.remainingLeaveDetails();
-  });   
+    this.interactionService.msgDataSource$.subscribe(msg => {
+      console.log('Update ' + msg);
+      this.remainingLeaveDetails();
+    });
   }
   remainingLeaveDetails() {
     this.leaveService.getRemainingLeaveByUserId(this.userId).subscribe(data => {

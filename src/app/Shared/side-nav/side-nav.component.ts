@@ -21,6 +21,9 @@ export class SideNavComponent implements OnInit {
   getResponse() {
     this.interactionService.msgDataSource$.subscribe(data => {
       this.responseMsg = data;
+      setTimeout(() => {
+        this.responseMsg=null;
+      }, 3000);
     });
   }
 

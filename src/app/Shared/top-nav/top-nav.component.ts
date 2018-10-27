@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TopNavComponent implements OnInit {
   // tslint:disable-next-line:no-input-rename
   @Input('userDataChild') userData: any;
+  
   constructor() { }
 
   ngOnInit() {

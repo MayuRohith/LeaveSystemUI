@@ -34,7 +34,6 @@ export class ReqLeaveComponent implements OnInit {
 
   ngOnInit() {
     this.viewAllLeaveTypes();
-
   }
 
   viewAllLeaveTypes() {
@@ -48,7 +47,8 @@ export class ReqLeaveComponent implements OnInit {
     startDate: new FormControl(''),
     endDate: new FormControl(''),
     leaveType: new FormControl(''),
-    reason: new FormControl('')
+    reason: new FormControl(''),
+    remainingDays: new FormControl('')
   });
 
   onSubmit() {
@@ -73,8 +73,8 @@ export class ReqLeaveComponent implements OnInit {
     console.log(this.leaveRequestObj);
 
     this.leaveRequestService.createLeaveRequest(this.leaveRequestObj).subscribe(msg => {
-      alert("leave request applied");
       this.interactionService.upadateMsg("success");
+      this.clearFields();
     })
   }
 
@@ -90,5 +90,13 @@ export class ReqLeaveComponent implements OnInit {
     })
   }
 
+
+  clearFields(){
+    this.leaveRequestForm.patchValue({reason: ""});
+    this.leaveRequestForm.patchValue({leaveType: ""});
+    this.leaveRequestForm.patchValue({startDate: ""});
+    this.leaveRequestForm.patchValue({endDate: ""});
+    this.leaveRequestForm.patchValue({remainingDays: ""});
+  }
 
 }
