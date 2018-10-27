@@ -20,7 +20,7 @@
           <tr *ngIf="leaveRequest.statusId.id === 1">
 
             
-            <td><a href="#"><i class="far fa-eye element-style"></i> &nbsp;{{leaveRequest.userId.firstName + " " + leaveRequest.userId.lastName}}</a></td>
+            <td><a href="#" data-toggle="modal" data-target="#UserLeaveHistoryModel"><i class="far fa-eye element-style"></i> &nbsp;{{leaveRequest.userId.firstName + " " + leaveRequest.userId.lastName}}</a></td>
             <!-- <td>{{leaveRequest.user}}</td> -->
             <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
             <td>{{leaveRequest.startDate | date : 'yyyy-MM-dd' }}</td>
@@ -68,17 +68,4 @@
     </div>
   </div>
 </div>
-
-
-
-<!-- <script>
-    $(document).ready(function () {
-      $("#btn-send").on("click", function () {
-        alert("clicked");
-      });
-    });
-  
-    // function test(){
-    //   alert("hi");
-    // }
-  </script> -->
+<app-user-leave-history></app-user-leave-history>

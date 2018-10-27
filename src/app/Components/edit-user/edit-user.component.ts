@@ -60,8 +60,8 @@ export class EditUserComponent implements OnInit {
       this.editUserForm.patchValue({ email: this.userObj.email });
       this.editUserForm.patchValue({ firstName: this.userObj.firstName });
       this.editUserForm.patchValue({ lastName: this.userObj.lastName });
-      this.editUserForm.patchValue({ roleId: this.userObj.roleId.id });
-      this.editUserForm.patchValue({ departmentId: this.userObj.departmentId.id });
+      this.editUserForm.patchValue({ roleId: this.userObj.roleId });
+      this.editUserForm.patchValue({ departmentId: this.userObj.departmentId });
       this.editUserForm.patchValue({ joinDate: joinDate });
     });
   }

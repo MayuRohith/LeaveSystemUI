@@ -1,3 +1,4 @@
+import { UserLeaveHistoryComponent } from './Components/user-leave-history/user-leave-history.component';
 import { UserService } from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -77,6 +78,7 @@ import { StatusService } from './services/status.service';
     RoutingComponents,
     ViewStatusComponent,
     EditUserComponent,
+    UserLeaveHistoryComponent,
   ],
   imports: [
     CommonModule,
