@@ -50,13 +50,11 @@ departmentHasError=true;
       Validators.required,
       Validators.minLength(3)
     ])),
-    roleId: new FormControl('',Validators.compose([
-      Validators.required
-    ])),
+    roleId: new FormControl(''),
     departmentId: new FormControl(''),
     joinDate: new FormControl('',Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      //Validators.minLength(3)
     ])),
   });
 
