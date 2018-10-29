@@ -21,6 +21,7 @@ export class InteractionService {
   private roleDataSource = new Subject<Role>();
   private userDataSource = new Subject<User>();
   private userInfo = new BehaviorSubject<string>(null);
+  private selectedUserId = new BehaviorSubject<number>(null);
 
   dataSourceDeparment = this.dataSource.asObservable();
   msgDataSource$ = this.msgDataSource.asObservable();
@@ -29,6 +30,7 @@ export class InteractionService {
   roleDataSource$ = this.roleDataSource.asObservable();
   userDataSource$ = this.userDataSource.asObservable();
   userInfo$ = this.userInfo.asObservable();
+  selectedUserId$ = this.selectedUserId.asObservable();
 
   sendDepartment(department: Department) {
     this.dataSource.next(department);
@@ -53,6 +55,9 @@ export class InteractionService {
   }
   sendUser(user: User) {
     this.userDataSource.next(user);
+  }
+  useSelectedUserId(userId: number){
+    this.selectedUserId.next(userId);
   }
 
 }

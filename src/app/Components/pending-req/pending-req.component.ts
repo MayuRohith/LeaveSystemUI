@@ -71,4 +71,8 @@ export class PendingReqComponent implements OnInit {
     this.interactionService.useUserInfo(firstName);
   }
 
+  selectedUserId(userId){
+    this.interactionService.useSelectedUserId(userId);
+  }
+
 }
