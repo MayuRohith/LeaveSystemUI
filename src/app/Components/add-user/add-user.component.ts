@@ -77,11 +77,11 @@ departmentHasError=true;
     const currentDate = new Date();
 
 
-    const leaveDays = (currentDate.getDate() - joinDate.getDate()) + 1;
+    const sPeriod = (currentDate.getDate() - joinDate.getDate()) + 1;
     // var days = leaveDays / (1000 * 60 * 60 * 24) + 1;
 
-    console.log(leaveDays);
-    this.userObj.servicePeriod = leaveDays;
+    console.log(sPeriod);
+    this.userObj.servicePeriod = sPeriod;
 
     this.userObj.userName = this.addUserForm.value.userName;
     this.userObj.email = this.addUserForm.value.email;

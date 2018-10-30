@@ -11,7 +11,7 @@ import { LeaveRequest } from 'src/app/Models/leave-request';
 })
 export class UserLeaveHistoryComponent implements OnInit {
 
-  constructor(private interactionService:InteractionService, private leaveRequestService: LeaveRequestService) { }
+  constructor(private interactionService: InteractionService, private leaveRequestService: LeaveRequestService) { }
   firstName: string;
   lastName: string;
   userName: string;
@@ -19,16 +19,18 @@ export class UserLeaveHistoryComponent implements OnInit {
   // userId: number;
 
   ngOnInit() {
-    this.interactionService.userInfo$.subscribe(data=>{
+    this.interactionService.userInfo$.subscribe(data => {
       console.log(data);
       // this.firstName=data.firstName;
       // this.lastName=data.lastName;
-      this.firstName=data;
+      this.firstName = data;
     });
 
-    this.interactionService.selectedUserId$.subscribe(data=>{
+    this.interactionService.selectedUserId$.subscribe(data => {
       // this.userId = data;
-      this.getLeaveHistoryByUserId(data);
+      if (data != null) {
+        this.getLeaveHistoryByUserId(data);
+      }
     })
   }
 

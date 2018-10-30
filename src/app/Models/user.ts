@@ -5,8 +5,8 @@ export class User {
     firstName: String;
     lastName: String;
     joinDate: Date;
-    roleId: number;
-    departmentId: number;
+    roleId: any;
+    departmentId: any;
     servicePeriod: number;
     password: String;
 }

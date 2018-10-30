@@ -42,7 +42,7 @@ export class EditUserComponent implements OnInit {
     this.getRoles();
     this.getDepartments();
     this.getRecord();
-    this.updateUse();
+    // this.updateUse();
   }
   public getRecord() {
     this.interactionService.userDataSource$.subscribe(data => {
@@ -65,17 +65,41 @@ export class EditUserComponent implements OnInit {
       this.editUserForm.patchValue({ joinDate: joinDate });
     });
   }
+
   updateUse() {
-    return this.userService.updateUser(this.userObj).subscribe(data=>{
-      alert(data);
+    alert("test");
+
+    
+    const joinDate = new Date(this.editUserForm.value.joinDate);
+    const currentDate = new Date();
+
+
+    const sPeriod = (currentDate.getDate() - joinDate.getDate()) + 1;
+    // var days = leaveDays / (1000 * 60 * 60 * 24) + 1;
+
+    console.log(sPeriod);
+    this.userObj.servicePeriod = sPeriod;
+
+    this.userObj.userName = this.editUserForm.value.userName;
+    this.userObj.email = this.editUserForm.value.email;
+    this.userObj.password = this.editUserForm.value.password;
+    this.userObj.firstName = this.editUserForm.value.firstName;
+    this.userObj.lastName = this.editUserForm.value.lastName;
+    this.userObj.roleId = this.editUserForm.value.roleId;
+    this.userObj.departmentId = this.editUserForm.value.departmentId;
+    this.userObj.joinDate = new Date(this.editUserForm.value.joinDate);
+
+    console.log(this.userObj);
+    return this.userService.updateUser(this.userObj).subscribe(data => {
       //console.log(data);
       this.interactionService.upadateMsg("success");
-    });
-    
+    },
+      error => {
+        alert("error");
+      });
     // updateUser(this.userObj).subscribe(data => {
     //   console.log(data);
     //   this.interactionService.upadateMsg('success');
-  
   }
 
   getRoles() {
@@ -83,6 +107,7 @@ export class EditUserComponent implements OnInit {
       this.roles = data;
     });
   }
+
   getDepartments() {
     this.departmentService.getDepartment().subscribe(data => {
       this.departments = data;
