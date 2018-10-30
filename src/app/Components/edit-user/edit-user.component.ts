@@ -42,7 +42,7 @@ export class EditUserComponent implements OnInit {
     this.getRoles();
     this.getDepartments();
     this.getRecord();
-    this.updateUser();
+    this.updateUse();
   }
   public getRecord() {
     this.interactionService.userDataSource$.subscribe(data => {
@@ -60,16 +60,22 @@ export class EditUserComponent implements OnInit {
       this.editUserForm.patchValue({ email: this.userObj.email });
       this.editUserForm.patchValue({ firstName: this.userObj.firstName });
       this.editUserForm.patchValue({ lastName: this.userObj.lastName });
-      this.editUserForm.patchValue({ roleId: this.userObj.roleId });
-      this.editUserForm.patchValue({ departmentId: this.userObj.departmentId });
+      this.editUserForm.patchValue({ roleId: this.userObj.roleId.id });
+      this.editUserForm.patchValue({ departmentId: this.userObj.departmentId.id });
       this.editUserForm.patchValue({ joinDate: joinDate });
     });
   }
-  updateUser() {
-    return this.userService.updateUser(this.userObj).subscribe(data => {
-      console.log(data);
-      this.interactionService.upadateMsg('success');
+  updateUse() {
+    return this.userService.updateUser(this.userObj).subscribe(data=>{
+      alert(data);
+      //console.log(data);
+      this.interactionService.upadateMsg("success");
     });
+    
+    // updateUser(this.userObj).subscribe(data => {
+    //   console.log(data);
+    //   this.interactionService.upadateMsg('success');
+  
   }
 
   getRoles() {

@@ -3,6 +3,7 @@ import { LeaveRequestService } from 'src/app/services/leave-request.service';
 import { LeaveRequestManage } from 'src/app/Models/leave-request-manage';
 import { LeaveRequest } from 'src/app/Models/leave-request';
 import { InteractionService } from '../../UIService/interaction.service';
+import { LoginService } from 'src/app/Services/login.service';
 
 @Component({
   selector: 'app-pending-req',
@@ -13,8 +14,10 @@ export class PendingReqComponent implements OnInit {
 
   leaveRequests: LeaveRequest[];
   leaveRequestManageObj = new LeaveRequestManage();
+  firstName: string;
+  lastName: string;
 
-  constructor(private leaveRequestService: LeaveRequestService, private interactionService: InteractionService) { }
+  constructor(private loginService:LoginService, private leaveRequestService: LeaveRequestService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.getAllLeaveRequest();
@@ -62,6 +65,14 @@ export class PendingReqComponent implements OnInit {
         this.interactionService.upadateMsg("fail");
       }
     );
+  }
+
+  sendUserInfo(firstName){
+    this.interactionService.useUserInfo(firstName);
+  }
+
+  selectedUserId(userId){
+    this.interactionService.useSelectedUserId(userId);
   }
 
 }

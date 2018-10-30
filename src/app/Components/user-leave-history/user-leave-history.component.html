@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header model-header-primary">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Leave history of #</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Leave history of {{firstName}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -22,17 +22,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let leaveRequest of leaveRequests">
-            <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
-            <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
-            <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
-            <td>{{leaveRequest.leaveDays}}</td>
-            <td>{{leaveRequest.reason}}</td>
+          <tr *ngFor="let leaveHistory of leaveHistory">
+            <td>{{leaveHistory.leaveTypeId.leaveType}}</td>
+            <td>{{leaveHistory.startDate | date: "yyyy-MM-dd"}}</td>
+            <td>{{leaveHistory.endDate | date: "yyyy-MM-dd"}}</td>
+            <td>{{leaveHistory.leaveDays}}</td>
+            <td>{{leaveHistory.reason}}</td>
             <td class="td-status-accept">
-              {{leaveRequest.statusId.status}}
+              {{leaveHistory.statusId.status}}
             </td>
              <td> 
-            <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+            <!-- <ng-container *ngIf="leaveHistory.statusId.status === 'Approved'"> -->
             <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
                 Cancel
               </button> -->
