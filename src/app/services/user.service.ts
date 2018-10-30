@@ -28,6 +28,6 @@ export class UserService {
   }
 
   public updateUser(user) {
-    return this.http.post<User>(this.userUrl + '/' + user.id, user );
+    return this.http.put<User>(this.userUrl + '/' + user.id,user   );
   }
 }
