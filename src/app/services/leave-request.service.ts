@@ -19,9 +19,13 @@ export class LeaveRequestService {
   private leaveRequestUrl = 'http://localhost:8080/hrm_system/leaverequest';
 
   //Get All leave request 
+  // public getAllLeaveRequest() {
+  //   return this.http.get<LeaveRequest[]>(this.leaveRequestUrl);
+  // }
+
   public getAllLeaveRequest() {
-    return this.http.get<LeaveRequest[]>(this.leaveRequestUrl);
-  }
+      return this.http.get<LeaveRequest[]>(this.leaveRequestUrl+"/sort");
+    }
 
   public getLeaveHistoryByUserId(empId) {
     return this.http.get<LeaveRequest[]>(this.leaveRequestUrl + "/user/" + empId);

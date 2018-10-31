@@ -15,7 +15,7 @@ import { Department } from 'src/app/Models/department';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-departmentHasError=true;
+  departmentHasError = true;
   userObj = new User();
 
   roles: Role[];
@@ -29,30 +29,30 @@ departmentHasError=true;
     private interactionService: InteractionService) { }
 
   addUserForm = new FormGroup({
-    userName: new FormControl('',Validators.compose([
+    userName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3)
     ])),
-    email: new FormControl('',Validators.compose([
+    email: new FormControl('', Validators.compose([
       Validators.required,
       //Validators.minLength(3),
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
     ])),
-    password: new FormControl('',Validators.compose([
+    password: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3)
     ])),
-    firstName: new FormControl('',Validators.compose([
+    firstName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3)
     ])),
-    lastName: new FormControl('',Validators.compose([
+    lastName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3)
     ])),
     roleId: new FormControl(''),
     departmentId: new FormControl(''),
-    joinDate: new FormControl('',Validators.compose([
+    joinDate: new FormControl('', Validators.compose([
       Validators.required,
       //Validators.minLength(3)
     ])),
@@ -63,13 +63,13 @@ departmentHasError=true;
     this.getDepartments();
     this.clearFields();
   }
-// validateDepartment(value){
-//   if (value == 'default'){
-//     this.departmentHasError=true;
-//   }else{
-//     this.departmentHasError=false;
-//   }
-// }
+  // validateDepartment(value){
+  //   if (value == 'default'){
+  //     this.departmentHasError=true;
+  //   }else{
+  //     this.departmentHasError=false;
+  //   }
+  // }
 
   onSubmit() {
 
@@ -119,15 +119,15 @@ departmentHasError=true;
     });
   }
 
-  clearFields(){
-    this.addUserForm.patchValue({userName: ""});
-    this.addUserForm.patchValue({email: ""});
-    this.addUserForm.patchValue({password: ""});
-    this.addUserForm.patchValue({firstName: ""});
-    this.addUserForm.patchValue({lastName: ""});
-    this.addUserForm.patchValue({roleId: "Select Role"});
-    this.addUserForm.patchValue({departmentId: "Select Department"});
-    this.addUserForm.patchValue({joinDate: ""});
+  clearFields() {
+    this.addUserForm.patchValue({ userName: "" });
+    this.addUserForm.patchValue({ email: "" });
+    this.addUserForm.patchValue({ password: "" });
+    this.addUserForm.patchValue({ firstName: "" });
+    this.addUserForm.patchValue({ lastName: "" });
+    this.addUserForm.patchValue({ roleId: "Select Role" });
+    this.addUserForm.patchValue({ departmentId: "Select Department" });
+    this.addUserForm.patchValue({ joinDate: "" });
   }
 
 }

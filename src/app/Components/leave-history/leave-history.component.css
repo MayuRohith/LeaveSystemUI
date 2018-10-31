@@ -1,9 +1,11 @@
 .td-status-accept{
-    color: green;
+    color: black;
+    background-color: #d2ffd2;
 }
 
 .td-status-reject{
-    color: red;
+    color: black;
+    background-color:#ffd1d1;
 }
 
 .tabs-font-color{

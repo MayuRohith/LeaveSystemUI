@@ -15,7 +15,7 @@ export class InteractionService {
   constructor() { }
 
   private dataSource = new Subject<Department>();
-  private msgDataSource = new BehaviorSubject<string>(null);
+  private msgDataSource = new Subject<string>();
   private leaveTypeDataSource = new Subject<ViewLeaveType>();
   private statusDtaSource = new Subject<Status>();
   private roleDataSource = new Subject<Role>();

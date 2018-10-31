@@ -67,7 +67,7 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUse() {
-    alert('test');
+    // alert('test');
 
 
     const joinDate = new Date(this.editUserForm.value.joinDate);

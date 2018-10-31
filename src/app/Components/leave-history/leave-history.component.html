@@ -24,7 +24,7 @@
         <table class="table">
           <thead class="thead-primary">
             <tr>
-              <th scope="col">First Name</th>
+              <th scope="col">Full Name</th>
               <th scope="col">Leave Type</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
@@ -35,17 +35,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let leaveRequest of leaveRequests">
+            <tr *ngFor="let leaveRequest of leaveRequests" [class.td-status-accept]="leaveRequest.statusId.id===2"
+              [class.td-status-reject]="leaveRequest.statusId.id===3">
               <td>{{leaveRequest.userId.firstName+ " " +leaveRequest.userId.lastName}}</td>
               <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
               <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
               <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
               <td>{{leaveRequest.leaveDays}}</td>
               <td>{{leaveRequest.reason}}</td>
-              <td class="td-status-accept">
+              <td>
                 {{leaveRequest.statusId.status}}
               </td>
-             
+
               <!-- <td> -->
               <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
               <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
@@ -61,7 +62,7 @@
         <table class="table">
           <thead class="thead-primary">
             <tr>
-              <th scope="col">User Name</th>
+              <th scope="col">Full Name</th>
               <th scope="col">Leave Type</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
@@ -73,23 +74,23 @@
           </thead>
           <tbody>
             <ng-container *ngFor="let leaveRequest of leaveRequests">
-            <tr *ngIf="leaveRequest.statusId.id === 2">
-              <td>{{leaveRequest.userId.firstName+ " " +leaveRequest.userId.lastName}}</td>
-              <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
-              <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
-              <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
-              <td>{{leaveRequest.leaveDays}}</td>
-              <td>{{leaveRequest.reason}}</td>
-              <td class="td-status-accept">
-                {{leaveRequest.statusId.status}}
-              </td>
-              <!-- <td> -->
-              <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
-              <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
+              <tr *ngIf="leaveRequest.statusId.id === 2" class="td-status-accept">
+                <td>{{leaveRequest.userId.firstName+ " " +leaveRequest.userId.lastName}}</td>
+                <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+                <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+                <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+                <td>{{leaveRequest.leaveDays}}</td>
+                <td>{{leaveRequest.reason}}</td>
+                <td>
+                  {{leaveRequest.statusId.status}}
+                </td>
+                <!-- <td> -->
+                <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+                <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
                         Cancel
                       </button> -->
-              <!-- </ng-container> -->
-              <!-- </td> -->
+                <!-- </ng-container> -->
+                <!-- </td> -->
             </ng-container>
           </tbody>
         </table>
@@ -100,7 +101,7 @@
         <table class="table">
           <thead class="thead-primary">
             <tr>
-              <th scope="col">User Name</th>
+              <th scope="col">Full Name</th>
               <th scope="col">Leave Type</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
@@ -111,24 +112,24 @@
             </tr>
           </thead>
           <tbody>
-              <ng-container *ngFor="let leaveRequest of leaveRequests">
-                  <tr *ngIf="leaveRequest.statusId.id === 3">
-              <td>{{leaveRequest.userId.firstName+ " " +leaveRequest.userId.lastName}}</td>
-              <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
-              <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
-              <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
-              <td>{{leaveRequest.leaveDays}}</td>
-              <td>{{leaveRequest.reason}}</td>
-              <td class="td-status-accept">
-                {{leaveRequest.statusId.status}}
-              </td>
-              <!-- <td> -->
-              <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
-              <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
+            <ng-container *ngFor="let leaveRequest of leaveRequests">
+              <tr *ngIf="leaveRequest.statusId.id === 3" class="td-status-reject">
+                <td>{{leaveRequest.userId.firstName+ " " +leaveRequest.userId.lastName}}</td>
+                <td>{{leaveRequest.leaveTypeId.leaveType}}</td>
+                <td>{{leaveRequest.startDate | date: "yyyy-MM-dd"}}</td>
+                <td>{{leaveRequest.endDate | date: "yyyy-MM-dd"}}</td>
+                <td>{{leaveRequest.leaveDays}}</td>
+                <td>{{leaveRequest.reason}}</td>
+                <td>
+                  {{leaveRequest.statusId.status}}
+                </td>
+                <!-- <td> -->
+                <!-- <ng-container *ngIf="leaveRequest.statusId.status === 'Approved'"> -->
+                <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#CancelLeaveModel">
                         Cancel
                       </button> -->
-              <!-- </ng-container> -->
-              <!-- </td> -->
+                <!-- </ng-container> -->
+                <!-- </td> -->
             </ng-container>
           </tbody>
         </table>
