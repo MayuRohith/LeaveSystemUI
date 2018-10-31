@@ -49,11 +49,11 @@ export class EditUserComponent implements OnInit {
       console.log(data);
       this.userObj = Object.assign({}, data);
 
-      var getJoinDate = new Date(data.joinDate);
+      const getJoinDate = new Date(data.joinDate);
 
       // var joinDatex = getJoinDate.getFullYear() + '-' + getJoinDate.getMonth() + '-' + getJoinDate.getDate();
 
-      var joinDate = this.datepipe.transform(getJoinDate, 'yyyy-MM-dd');
+      const joinDate = this.datepipe.transform(getJoinDate, 'yyyy-MM-dd');
 
       this.editUserForm.patchValue({ userId: this.userObj.id });
       this.editUserForm.patchValue({ userName: this.userObj.userName });
@@ -67,9 +67,9 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUse() {
-    alert("test");
+    alert('test');
 
-    
+
     const joinDate = new Date(this.editUserForm.value.joinDate);
     const currentDate = new Date();
 
@@ -91,11 +91,11 @@ export class EditUserComponent implements OnInit {
 
     console.log(this.userObj);
     return this.userService.updateUser(this.userObj).subscribe(data => {
-      //console.log(data);
-      this.interactionService.upadateMsg("success");
+      // console.log(data);
+      this.interactionService.upadateMsg('success');
     },
       error => {
-        alert("error");
+        alert('error');
       });
     // updateUser(this.userObj).subscribe(data => {
     //   console.log(data);
