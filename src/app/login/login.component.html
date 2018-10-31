@@ -23,6 +23,10 @@
                 <a href="#">Forgot Password?</a>
                       <button id="btnLogin" type="submit" class="btn btn-primary btn-circle float-right" (click)="getLoginAuth();">Login</button>
                 </div>
+                <br>
+                <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'invalid'">
+                  <span class="bold-font">Error:</span>Please Enter Correct User Name / Password.
+                </div>
           </form>
         </div>
       </div>
