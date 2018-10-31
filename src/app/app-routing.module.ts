@@ -17,7 +17,7 @@ import { ViewHolidayComponent } from './Components/view-holiday/view-holiday.com
 const routes: Routes = [
   {path: 'dashboard', component: UserComponent},
   {path: 'previlage', component: PrevilageComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent},
   {path: 'department', component: AddDepartmentComponent},
   {path: 'leavetype', component: AddLeaveTypeComponent},
   {path: 'status', component: AddStatusComponent},
@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'enrole', component: AddUserComponent},
   {path: 'role', component: AddRoleComponent},
   {path: 'admin', component: AdminComponent},
-  {path: '**', redirectTo: 'dashboard'},
+  {path: '**', redirectTo: ''},
   // {path: 'role', component: ViewRoleComponent},
   // {path: 'pendingreq', component: PendingReqComponent}
 ];
